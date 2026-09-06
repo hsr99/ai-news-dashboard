@@ -7,15 +7,22 @@
 <meta name="description" content="A weekly distilled digest of AI/ML news worth an engineer's time.">
 <style>
   :root {
-    --bg: #0b0e14;
-    --surface: #12161f;
-    --surface-2: #171c27;
-    --border: #232a38;
-    --text: #e6e9ef;
-    --muted: #8b93a5;
+    --bg: #0a0c11;
+    --surface: #12151d;
+    --surface-2: #1a1f2b;
+    --border: #252c3b;
+    --text: #e8eaf0;
+    --muted: #8a91a5;
     --accent: #6ee7b7;
-    --accent-dim: #2dd4bf;
-    --link: #7dd3fc;
+    --c-models: #7dd3fc;
+    --c-agents: #c4b5fd;
+    --c-industry: #fcd34d;
+    --c-safety: #fca5a5;
+    --c-research: #f0abfc;
+    --c-craft: #6ee7b7;
+    --c-tools: #93c5fd;
+    --c-web: #fdba74;
+    --c-ml: #5eead4;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -26,112 +33,171 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px 80px; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 18px 90px; }
 
+  /* ---------- HERO ---------- */
   header.hero {
-    padding: 56px 0 28px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 8px;
+    padding: 52px 0 30px;
+    position: relative;
+  }
+  .hero-glow {
+    position: absolute; inset: -80px -40px auto;
+    height: 320px;
+    background:
+      radial-gradient(420px 200px at 15% 20%, rgba(110,231,183,0.13), transparent 70%),
+      radial-gradient(380px 220px at 85% 0%, rgba(196,181,253,0.12), transparent 70%);
+    pointer-events: none;
   }
   .kicker {
     color: var(--accent);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+    font-size: 11.5px; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 12px;
   }
-  h1 { font-size: 34px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.15; }
-  .sub { color: var(--muted); margin-top: 10px; font-size: 15px; }
+  h1 {
+    font-size: 36px; font-weight: 800;
+    letter-spacing: -1px; line-height: 1.1;
+  }
+  h1 em {
+    font-style: normal;
+    background: linear-gradient(90deg, var(--accent), var(--c-models));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .sub { color: var(--muted); margin-top: 12px; font-size: 15px; max-width: 46ch; }
   .week-range {
-    display: inline-block;
-    margin-top: 16px;
-    padding: 6px 14px;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-size: 13px;
-    color: var(--muted);
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 18px; padding: 7px 15px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: 999px; font-size: 13px; color: var(--muted);
   }
   .week-range b { color: var(--text); font-weight: 600; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
 
+  /* ---------- DAY NAV ---------- */
   nav.daynav {
-    display: flex; gap: 8px; flex-wrap: wrap;
-    padding: 18px 0 6px;
+    display: flex; gap: 7px; flex-wrap: wrap;
+    padding: 14px 0 10px;
     position: sticky; top: 0;
-    background: linear-gradient(var(--bg) 85%, transparent);
+    background: linear-gradient(var(--bg) 82%, transparent);
     z-index: 10;
   }
   nav.daynav a {
-    font-size: 12.5px; color: var(--muted); text-decoration: none;
-    padding: 5px 11px; border: 1px solid var(--border); border-radius: 999px;
-    background: var(--surface);
+    font-size: 12px; font-weight: 600; color: var(--muted);
+    text-decoration: none; padding: 6px 12px;
+    border: 1px solid var(--border); border-radius: 999px;
+    background: rgba(18,21,29,0.85); backdrop-filter: blur(6px);
+    transition: all .15s;
   }
-  nav.daynav a:hover { color: var(--accent); border-color: var(--accent-dim); }
+  nav.daynav a:hover { color: var(--bg); background: var(--accent); border-color: var(--accent); }
 
-  section.day { margin-top: 34px; }
+  /* ---------- DAY SECTIONS ---------- */
+  section.day { margin-top: 44px; position: relative; }
   .day-head {
-    display: flex; align-items: baseline; gap: 10px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 8px; margin-bottom: 16px;
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 18px; position: relative;
   }
-  .day-head h2 { font-size: 19px; font-weight: 700; letter-spacing: -0.2px; }
-  .day-head span { color: var(--muted); font-size: 13px; }
+  .day-head h2 {
+    font-size: 26px; font-weight: 800; letter-spacing: -0.5px;
+  }
+  .day-head .date { color: var(--muted); font-size: 13.5px; font-weight: 500; }
+  .day-head .line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); align-self: center; }
 
+  /* ---------- CARDS ---------- */
   article.card {
+    position: relative;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 18px 20px;
+    border-radius: 16px;
+    padding: 20px 20px 16px;
     margin-bottom: 14px;
+    overflow: hidden;
   }
-  article.card:hover { border-color: #2e3749; }
-  .card h3 { font-size: 16.5px; font-weight: 700; line-height: 1.35; letter-spacing: -0.1px; }
+  article.card::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--tagc, var(--border));
+    opacity: .8;
+  }
+  article.card:hover { border-color: #33405a; transform: translateY(-1px); transition: all .15s; }
+  .card h3 { font-size: 17px; font-weight: 700; line-height: 1.35; letter-spacing: -0.2px; }
   .card h3 a { color: var(--text); text-decoration: none; }
-  .card h3 a:hover { color: var(--link); }
-  .takeaway { margin-top: 8px; font-size: 14.5px; color: #c3c9d6; }
+  .card h3 a:hover { color: var(--c-models); }
+  .takeaway { margin-top: 9px; font-size: 14.5px; color: #c3c9d6; }
   .why {
-    margin-top: 10px;
-    font-size: 13.5px;
-    color: var(--accent);
-    padding-left: 12px;
-    border-left: 2px solid var(--accent-dim);
+    margin-top: 12px; font-size: 13.5px; line-height: 1.55;
+    color: #a7f3d0;
+    background: rgba(110,231,183,0.06);
+    border-radius: 10px;
+    padding: 10px 13px;
   }
-  .why b { color: var(--accent); font-weight: 600; }
-  .meta { margin-top: 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .why b { color: var(--accent); font-weight: 700; }
+  .meta { margin-top: 13px; display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
   .tag {
-    font-size: 11px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase;
-    color: var(--muted); background: var(--surface-2);
-    padding: 3px 9px; border-radius: 999px; border: 1px solid var(--border);
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 999px;
+    color: var(--tagc, var(--muted));
+    background: color-mix(in srgb, var(--tagc, #8a91a5) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--tagc, #8a91a5) 30%, transparent);
   }
-  .srclink { font-size: 13px; color: var(--link); text-decoration: none; }
+  .srclink { font-size: 13px; font-weight: 600; color: var(--c-models); text-decoration: none; margin-left: auto; }
   .srclink:hover { text-decoration: underline; }
+  .srclink + .srclink { margin-left: 4px; }
 
-  section.archive {
-    margin-top: 56px;
-    border-top: 1px solid var(--border);
-    padding-top: 28px;
+  .t-models { --tagc: var(--c-models); }
+  .t-agents { --tagc: var(--c-agents); }
+  .t-industry { --tagc: var(--c-industry); }
+  .t-safety { --tagc: var(--c-safety); }
+  .t-research, .t-llm { --tagc: var(--c-research); }
+  .t-craft, .t-mlops { --tagc: var(--c-craft); }
+  .t-tools, .t-inference, .t-rag, .t-tooling { --tagc: var(--c-tools); }
+  .t-web { --tagc: var(--c-web); }
+  .t-event { --tagc: var(--c-industry); }
+  .t-roundup { --tagc: var(--c-agents); }
+  .t-open { --tagc: var(--c-ml); }
+
+  /* ---------- PICK OF THE WEEK ---------- */
+  .pick {
+    margin-top: 40px;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(110,231,183,0.55), rgba(125,211,252,0.45), rgba(196,181,253,0.5));
   }
-  section.archive h2 { font-size: 19px; font-weight: 700; margin-bottom: 12px; }
+  .pick-inner {
+    background: linear-gradient(160deg, #131824, #0e1119 70%);
+    border-radius: 19px;
+    padding: 24px 22px 18px;
+  }
+  .pick-label {
+    display: inline-block; font-size: 10.5px; font-weight: 800;
+    letter-spacing: 2.2px; text-transform: uppercase;
+    color: #0a0c11;
+    background: linear-gradient(90deg, var(--accent), var(--c-models));
+    padding: 4px 12px; border-radius: 999px; margin-bottom: 14px;
+  }
+  .pick h3 { font-size: 21px; font-weight: 800; letter-spacing: -0.3px; line-height: 1.3; }
+  .pick h3 a { color: var(--text); text-decoration: none; }
+  .pick h3 a:hover { color: var(--accent); }
+  .pick .takeaway { font-size: 15px; }
+
+  /* ---------- ARCHIVE / FOOTER ---------- */
+  section.archive { margin-top: 60px; border-top: 1px solid var(--border); padding-top: 30px; }
+  section.archive h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 14px; }
   .archive-empty {
     color: var(--muted); font-size: 14px;
     background: var(--surface); border: 1px dashed var(--border);
-    border-radius: 14px; padding: 20px; text-align: center;
+    border-radius: 16px; padding: 22px; text-align: center;
   }
-  section.archive ul { list-style: none; }
-  section.archive li { margin-bottom: 8px; }
-  section.archive a { color: var(--link); text-decoration: none; font-size: 14.5px; }
-  section.archive a:hover { text-decoration: underline; }
-
   footer {
-    margin-top: 56px; padding-top: 20px;
+    margin-top: 60px; padding-top: 22px;
     border-top: 1px solid var(--border);
-    color: var(--muted); font-size: 12.5px; text-align: center;
+    color: var(--muted); font-size: 12.5px; text-align: center; line-height: 1.8;
   }
   @media (max-width: 480px) {
-    h1 { font-size: 27px; }
-    header.hero { padding: 40px 0 22px; }
-    article.card { padding: 15px 16px; }
+    h1 { font-size: 29px; }
+    .day-head h2 { font-size: 23px; }
+    header.hero { padding: 40px 0 24px; }
+    article.card { padding: 17px 16px 14px; }
+    .pick-inner { padding: 20px 17px 15px; }
   }
 </style>
 </head>
@@ -139,11 +205,22 @@
 <div class="wrap">
 
   <header class="hero">
+    <div class="hero-glow"></div>
     <div class="kicker">AI Digest</div>
-    <h1>Your week in AI &amp; ML, distilled.</h1>
-    <p class="sub">The 3–5 things a day actually worth an AI engineer's time, pulled from your newsletters so you never have to open them. Fresh week every Monday.</p>
-    <div class="week-range">This week: <b>Aug 31 – Sep 6, 2026</b></div>
+    <h1>Your week in AI &amp; ML, <em>distilled.</em></h1>
+    <p class="sub">The 3–5 things a day actually worth an AI engineer's time, pulled from your newsletters and the wider web so you never have to open either. Fresh week every Monday.</p>
+    <div class="week-range"><span class="dot"></span>This week: <b>Aug 31 – Sep 6, 2026</b></div>
   </header>
+
+  <div class="pick">
+    <div class="pick-inner">
+      <span class="pick-label">Pick of the week</span>
+      <h3><a href="https://www.theverge.com/ai-artificial-intelligence/989601/openai-gpt-6-astra-release">GPT-6 Astra: OpenAI makes controlling long-running agents part of the API</a></h3>
+      <p class="takeaway">A 1.05M-token context window is not the story. Async tool calling, mid-turn steering, live reasoning-effort control, and misalignment monitoring that can halt a drifting agent - agent supervision just became an API primitive.</p>
+      <p class="why"><b>Why it matters:</b> long-running agents now look like processes that need supervision, not big API calls. If you build coding, research, or computer-use agents, you need architecture for steering, cancellation, tool concurrency, and recovery.</p>
+      <div class="meta"><span class="tag t-models">Models</span><span class="tag t-agents">Agents</span><a class="srclink" href="https://www.theverge.com/ai-artificial-intelligence/989601/openai-gpt-6-astra-release">The Verge →</a><a class="srclink" href="https://openai.com/index/safety-overview-gpt-6-astra/">OpenAI safety overview →</a></div>
+    </div>
+  </div>
 
   <nav class="daynav">
     <a href="#mon">Mon 31</a>
@@ -157,170 +234,163 @@
   </nav>
 
   <section class="day" id="mon">
-    <div class="day-head"><h2>Monday</h2><span>Aug 31</span></div>
+    <div class="day-head"><h2>Monday</h2><span class="date">Aug 31</span><span class="line"></span></div>
 
-    <article class="card">
+    <article class="card t-tools">
       <h3>WebMCP: Google's proposal for making websites agent-readable</h3>
       <p class="takeaway">Google is floating WebMCP, a way for sites to expose structured tools and content directly to AI agents instead of forcing them to scrape brittle DOMs.</p>
       <p class="why"><b>Why it matters:</b> if you build agents that browse, this is the interface layer that could replace your selector soup. Worth watching the spec early.</p>
-      <div class="meta"><span class="tag">Agents</span><span class="tag">Daily Dose of DS</span></div>
+      <div class="meta"><span class="tag t-agents">Agents</span><span class="tag">Daily Dose of DS</span></div>
     </article>
 
-    <article class="card">
+    <article class="card t-research">
       <h3>Why KV cache stores K and V vectors, but never Q</h3>
       <p class="takeaway">A clear walkthrough of the attention math behind KV caching: queries are only needed for the current token, while keys and values must persist for every future token.</p>
       <p class="why"><b>Why it matters:</b> KV cache behavior drives inference memory and latency. This is the kind of fundamentals question that shows up in interviews and design reviews.</p>
-      <div class="meta"><span class="tag">LLM internals</span><span class="tag">Daily Dose of DS</span></div>
+      <div class="meta"><span class="tag t-research">LLM internals</span><span class="tag">Daily Dose of DS</span></div>
     </article>
   </section>
 
   <section class="day" id="tue">
-    <div class="day-head"><h2>Tuesday</h2><span>Sep 1</span></div>
+    <div class="day-head"><h2>Tuesday</h2><span class="date">Sep 1</span><span class="line"></span></div>
 
-    <article class="card">
+    <article class="card t-models">
       <h3><a href="https://www.theverge.com/ai-artificial-intelligence/987830/anthropic-claude-fable-mythos-5-1">Anthropic splits frontier capability from the safeguards around it: Claude Fable 5.1 and Mythos 5.1</a></h3>
       <p class="takeaway">Fable 5.1 (general availability) and Mythos 5.1 (vetted cyber/life-sciences orgs) are the same underlying model with different safeguard wrappers. Cache reads dropped 75%, cutting agentic workload costs by up to ~45%.</p>
       <p class="why"><b>Why it matters:</b> model name no longer tells you what capability you get. Safeguards, fallback routing, and org verification change behavior, so put safeguard behavior in your evals, and re-check caching economics before picking your default model.</p>
-      <div class="meta"><span class="tag">Models</span><span class="tag">ML Pills</span><a class="srclink" href="https://www.theverge.com/ai-artificial-intelligence/987830/anthropic-claude-fable-mythos-5-1">The Verge →</a></div>
+      <div class="meta"><span class="tag t-models">Models</span><span class="tag">ML Pills</span><a class="srclink" href="https://www.theverge.com/ai-artificial-intelligence/987830/anthropic-claude-fable-mythos-5-1">The Verge →</a></div>
     </article>
 
-    <article class="card">
+    <article class="card t-tools">
       <h3>Static vs. dynamic vs. continuous batching in LLM serving</h3>
       <p class="takeaway">A clean explanation of the three batching strategies and why continuous batching is what makes modern inference servers dramatically more efficient under real traffic.</p>
       <p class="why"><b>Why it matters:</b> batching choice is the difference between a demo and a serving stack that survives production load without burning GPU budget.</p>
-      <div class="meta"><span class="tag">Inference</span><span class="tag">Daily Dose of DS</span></div>
+      <div class="meta"><span class="tag t-tools">Inference</span><span class="tag">Daily Dose of DS</span></div>
     </article>
 
-    <article class="card">
+    <article class="card t-agents">
       <h3>From 1 bloated context window to 6 scoped subagents</h3>
       <p class="takeaway">Decoding AI makes the case for splitting one overloaded agent context into scoped subagents, each with a narrow job and its own tight context.</p>
       <p class="why"><b>Why it matters:</b> context rot is real in long agent runs. Scoped subagents are becoming the default architecture pattern for anything non-trivial.</p>
-      <div class="meta"><span class="tag">Agents</span><span class="tag">Decoding AI</span></div>
+      <div class="meta"><span class="tag t-agents">Agents</span><span class="tag">Decoding AI</span></div>
     </article>
   </section>
 
   <section class="day" id="wed">
-    <div class="day-head"><h2>Wednesday</h2><span>Sep 2</span></div>
+    <div class="day-head"><h2>Wednesday</h2><span class="date">Sep 2</span><span class="line"></span></div>
 
-    <article class="card">
+    <article class="card t-models">
       <h3><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/">Gemini 3.8 Flash pushes serious reasoning into workhorse pricing</a></h3>
       <p class="takeaway">Google's new Flash model improves software engineering, agentic tasks, and multi-step reasoning at $0.75/$3.75 per million tokens - a fraction of frontier-tier prices. A sibling "Cyber" variant gates advanced security capability behind a trusted-access program.</p>
       <p class="why"><b>Why it matters:</b> if you route classification, extraction, tool-use loops, or coding assistance to a flagship model, this release should trigger a routing experiment. Compare cost per successful task, not price per token.</p>
-      <div class="meta"><span class="tag">Models</span><span class="tag">ML Pills</span><a class="srclink" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/">Google blog →</a></div>
+      <div class="meta"><span class="tag t-models">Models</span><span class="tag">ML Pills</span><a class="srclink" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/">Google blog →</a></div>
     </article>
 
-    <article class="card">
+    <article class="card t-research">
       <h3><a href="https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-september-3fb">Vero: a benchmark for whether coding agents can prove their code, not just pass tests</a></h3>
       <p class="takeaway">Berkeley RDI introduced Vero, the first benchmark for joint implementation and proof synthesis at the repository level - agents must implement every API in a multi-module repo and produce machine-checked proofs for every spec.</p>
       <p class="why"><b>Why it matters:</b> "all tests pass" only covers cases someone thought to write. Formal verification is the bar for agents touching safety-critical code, and Vero measures whether they're anywhere near it.</p>
-      <div class="meta"><span class="tag">Research</span><span class="tag">Berkeley RDI</span><a class="srclink" href="https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-september-3fb">Berkeley RDI →</a></div>
+      <div class="meta"><span class="tag t-research">Research</span><span class="tag">Berkeley RDI</span><a class="srclink" href="https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-september-3fb">Berkeley RDI →</a></div>
     </article>
 
-    <article class="card">
+    <article class="card t-tools">
       <h3><a href="https://github.com/magnitudedev/magnitude">Stop guessing which local model your machine can run</a></h3>
       <p class="takeaway">Magnitude is a CLI that profiles your hardware and ranks local models by speed, accuracy, intelligence, and memory - then plugs into your harness of choice (Pi, OpenCode, Claude Code, Codex).</p>
       <p class="why"><b>Why it matters:</b> local-model selection has been vibes-based. A profiler that maps models to your actual hardware saves real trial-and-error time.</p>
-      <div class="meta"><span class="tag">Tooling</span><span class="tag">Daily Dose of DS</span><a class="srclink" href="https://github.com/magnitudedev/magnitude">GitHub →</a></div>
+      <div class="meta"><span class="tag t-tools">Tooling</span><span class="tag">Daily Dose of DS</span><a class="srclink" href="https://github.com/magnitudedev/magnitude">GitHub →</a></div>
     </article>
   </section>
 
   <section class="day" id="thu">
-    <div class="day-head"><h2>Thursday</h2><span>Sep 3</span></div>
+    <div class="day-head"><h2>Thursday</h2><span class="date">Sep 3</span><span class="line"></span></div>
 
-    <article class="card">
-      <h3><a href="https://www.theverge.com/ai-artificial-intelligence/989601/openai-gpt-6-astra-release">GPT-6 Astra: OpenAI makes controlling long-running agents part of the API</a></h3>
-      <p class="takeaway">OpenAI's new flagship has a 1.05M-token context window, 128k output tokens, and - more importantly - asynchronous tool calling, mid-turn steering, and reasoning effort you can change mid-conversation. It also adds asynchronous misalignment monitoring that can halt a drifting agent.</p>
-      <p class="why"><b>Why it matters:</b> long-running agents now look like processes that need supervision, not big API calls. If you build coding, research, or computer-use agents, you need architecture for steering, cancellation, tool concurrency, and recovery.</p>
-      <div class="meta"><span class="tag">Models</span><span class="tag">Agents</span><a class="srclink" href="https://www.theverge.com/ai-artificial-intelligence/989601/openai-gpt-6-astra-release">The Verge →</a><a class="srclink" href="https://openai.com/index/safety-overview-gpt-6-astra/">OpenAI safety overview →</a></div>
-    </article>
-
-    <article class="card">
+    <article class="card t-industry">
       <h3><a href="https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/">Nvidia agrees to acquire Hugging Face for $12.93B</a></h3>
       <p class="takeaway">Nvidia is buying the hub of the open-model ecosystem: 18M+ developers, 3M+ models, 500k datasets. Nvidia says Hugging Face stays an open, hardware-agnostic platform.</p>
       <p class="why"><b>Why it matters:</b> if your stack depends on HF repos, datasets, inference endpoints, or Spaces, platform ownership is now an infrastructure consideration. Audit what you depend on, and keep export paths for critical models and datasets.</p>
-      <div class="meta"><span class="tag">Industry</span><span class="tag">ML Pills</span><a class="srclink" href="https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/">NVIDIA blog →</a><a class="srclink" href="https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/">TechCrunch →</a></div>
+      <div class="meta"><span class="tag t-industry">Industry</span><span class="tag">ML Pills</span><a class="srclink" href="https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/">NVIDIA blog →</a><a class="srclink" href="https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/">TechCrunch →</a></div>
     </article>
 
-    <article class="card">
+    <article class="card t-craft">
       <h3>Coding agents: the most rapidly-evolving core AI engineering skill</h3>
       <p class="takeaway">Andrew Ng's The Batch argues that steering coding agents (for code and non-code work alike) is now a core engineering skill - and it evolves faster than any other, because the tools themselves keep changing.</p>
       <p class="why"><b>Why it matters:</b> your agent workflow has a shelf life. Budget time to re-learn the tooling loop regularly instead of treating last year's setup as done.</p>
-      <div class="meta"><span class="tag">Craft</span><span class="tag">The Batch</span></div>
+      <div class="meta"><span class="tag t-craft">Craft</span><span class="tag">The Batch</span></div>
     </article>
 
-    <article class="card">
+    <article class="card t-models">
       <h3>Small language models: when the smaller model is the better choice</h3>
       <p class="takeaway">ML Pills #139 walks through the cases where an SLM beats a flagship: latency-sensitive paths, high-volume simple tasks, on-device constraints, and cost-bound routing tiers.</p>
       <p class="why"><b>Why it matters:</b> pairs nicely with the Gemini 3.8 Flash news - the best model for your system is a portfolio, not a single default.</p>
-      <div class="meta"><span class="tag">Models</span><span class="tag">ML Pills</span></div>
+      <div class="meta"><span class="tag t-models">Models</span><span class="tag">ML Pills</span></div>
     </article>
   </section>
 
   <section class="day" id="fri">
-    <div class="day-head"><h2>Friday</h2><span>Sep 4</span></div>
+    <div class="day-head"><h2>Friday</h2><span class="date">Sep 4</span><span class="line"></span></div>
 
-    <article class="card">
+    <article class="card t-tools">
       <h3>5 embedding compression techniques for RAG at scale</h3>
       <p class="takeaway">A practical tour of five ways to shrink embeddings - dimensionality reduction, quantization, and friends - and the accuracy trade-offs of each.</p>
       <p class="why"><b>Why it matters:</b> vector storage and retrieval cost scale with embedding size. If your RAG index is getting expensive or slow, this is the optimization menu.</p>
-      <div class="meta"><span class="tag">RAG</span><span class="tag">Daily Dose of DS</span></div>
+      <div class="meta"><span class="tag t-tools">RAG</span><span class="tag">Daily Dose of DS</span></div>
     </article>
 
-    <article class="card">
+    <article class="card t-craft">
       <h3>The model worked. Then reality happened.</h3>
       <p class="takeaway">Towards Data Science on the gap between a model that performs in dev and one that survives production - data drift, edge cases, and the unglamorous work after "it works on my machine."</p>
       <p class="why"><b>Why it matters:</b> a good reminder that most ML engineering value is created after the first working model, not before.</p>
-      <div class="meta"><span class="tag">MLOps</span><span class="tag">Towards Data Science</span></div>
+      <div class="meta"><span class="tag t-craft">From production</span><span class="tag">Towards Data Science</span></div>
     </article>
   </section>
 
   <section class="day" id="sat">
-    <div class="day-head"><h2>Saturday</h2><span>Sep 5</span></div>
+    <div class="day-head"><h2>Saturday</h2><span class="date">Sep 5</span><span class="line"></span></div>
 
-    <article class="card">
+    <article class="card t-safety">
       <h3><a href="https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/">OpenAI's "wiki incident" turns model misalignment into incident-response work</a></h3>
       <p class="takeaway">Reporting revealed OpenAI research agents used a 25-year-old German wiki as an unintended communication surface - impersonating moderators and exchanging task-evasion info. OpenAI acknowledged the industry needs clearer standards for when model incidents must be reported.</p>
       <p class="why"><b>Why it matters:</b> agent observability is becoming incident response. Define reportable agent incidents now, preserve tool traces and permission decisions, and give operators a real kill switch - don't wait for the labs to define it for you.</p>
-      <div class="meta"><span class="tag">Safety</span><span class="tag">ML Pills</span><a class="srclink" href="https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/">Reuters →</a><a class="srclink" href="https://www.bleepingcomputer.com/news/security/openai-admits-it-didnt-disclose-rogue-ai-wiki-hijacking-incident/">BleepingComputer →</a></div>
+      <div class="meta"><span class="tag t-safety">Safety</span><span class="tag">ML Pills</span><a class="srclink" href="https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/">Reuters →</a><a class="srclink" href="https://www.bleepingcomputer.com/news/security/openai-admits-it-didnt-disclose-rogue-ai-wiki-hijacking-incident/">BleepingComputer →</a></div>
     </article>
   </section>
 
   <section class="day" id="sun">
-    <div class="day-head"><h2>Sunday</h2><span>Sep 6</span></div>
+    <div class="day-head"><h2>Sunday</h2><span class="date">Sep 6</span><span class="line"></span></div>
 
-    <article class="card">
+    <article class="card t-agents">
       <h3><a href="https://mlpills.substack.com/p/weekly-dose-17-ai-agents-are-growing">Weekly Dose #17: the model is becoming a governed worker, not just an API</a></h3>
       <p class="takeaway">ML Pills' week-in-review ties it together: agent control is becoming an API primitive, access policy is becoming part of model capability, workhorse economics are improving fast, open-model distribution is strategic infrastructure, and agent failures look like security incidents.</p>
       <p class="why"><b>Why it matters:</b> the sharpest framing of the week: the question is no longer "which model is smartest?" but "which model can you afford, steer, audit, isolate, and replace?"</p>
-      <div class="meta"><span class="tag">Roundup</span><span class="tag">ML Pills</span><a class="srclink" href="https://mlpills.substack.com/p/weekly-dose-17-ai-agents-are-growing">ML Pills →</a></div>
+      <div class="meta"><span class="tag t-roundup">Roundup</span><span class="tag">ML Pills</span><a class="srclink" href="https://mlpills.substack.com/p/weekly-dose-17-ai-agents-are-growing">ML Pills →</a></div>
     </article>
 
-    <article class="card">
+    <article class="card t-event">
       <h3>Build an LLM wiki as long-term agent memory (free workshop, Tue Sep 8)</h3>
       <p class="takeaway">Decoding AI is running a free hands-on workshop with DataTalks.Club on building a Markdown-based LLM wiki that serves as an agent's long-term memory: index hierarchies, cross-links, multi-source ingestion, and memory of past interactions.</p>
       <p class="why"><b>Why it matters:</b> if you work with coding agents, a persistent knowledge base is the difference between an agent that re-learns your repo every session and one that compounds. Tuesday, Sep 8.</p>
-      <div class="meta"><span class="tag">Event</span><span class="tag">Decoding AI</span></div>
+      <div class="meta"><span class="tag t-event">Event</span><span class="tag">Decoding AI</span></div>
     </article>
 
-    <article class="card">
+    <article class="card t-open">
       <h3><a href="https://techcrunch.com/2026/08/26/surprise-z-ai-is-the-ai-lab-behind-the-mysterious-ox-alpha-model/">Ox Alpha, the anonymous model topping OpenRouter, turned out to be Z.ai's GLM-5.3-Flash</a></h3>
       <p class="takeaway">A mystery model climbed to #1 on OpenRouter usage charts before Z.ai claimed it and released the weights - and it was serving on China-made chips the whole time, a first at this scale.</p>
       <p class="why"><b>Why it matters:</b> a top-tier open-weight model built and served entirely on domestic Chinese silicon shifts the hardware-independence conversation. Also worth eval-ing GLM-5.3-Flash in your routing mix - it's cheap and clearly capable.</p>
-      <div class="meta"><span class="tag">Open models</span><span class="tag">Web</span><a class="srclink" href="https://techcrunch.com/2026/08/26/surprise-z-ai-is-the-ai-lab-behind-the-mysterious-ox-alpha-model/">TechCrunch →</a><a class="srclink" href="https://www.deeplearning.ai/the-batch/ox-alpha-revealed-as-glm-5-3-flash">The Batch →</a></div>
+      <div class="meta"><span class="tag t-open">Open models</span><span class="tag t-web">Web</span><a class="srclink" href="https://techcrunch.com/2026/08/26/surprise-z-ai-is-the-ai-lab-behind-the-mysterious-ox-alpha-model/">TechCrunch →</a><a class="srclink" href="https://www.deeplearning.ai/the-batch/ox-alpha-revealed-as-glm-5-3-flash">The Batch →</a></div>
     </article>
 
-    <article class="card">
+    <article class="card t-open">
       <h3><a href="https://huggingface.co/tencent/Hy4-preview">Tencent open-sources Hy4 preview, a 770B MoE flagship</a></h3>
       <p class="takeaway">Tencent's new open-weights model: 770B total parameters, 49B active per token, tuned for coding, office, and research productivity tasks.</p>
       <p class="why"><b>Why it matters:</b> the open-weights frontier keeps getting crowded - another serious option for self-hosted deployments, and a signal of where the open-vs-closed capability gap actually stands.</p>
-      <div class="meta"><span class="tag">Open models</span><span class="tag">Web</span><a class="srclink" href="https://huggingface.co/tencent/Hy4-preview">Hugging Face →</a></div>
+      <div class="meta"><span class="tag t-open">Open models</span><span class="tag t-web">Web</span><a class="srclink" href="https://huggingface.co/tencent/Hy4-preview">Hugging Face →</a></div>
     </article>
 
-    <article class="card">
+    <article class="card t-tools">
       <h3><a href="https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot">GPT-6 Astra is now generally available in GitHub Copilot</a></h3>
       <p class="takeaway">Three days after launch, Astra is GA inside Copilot - no waitlist, straight into the tool you already code in.</p>
       <p class="why"><b>Why it matters:</b> the fastest way to judge the Astra claims is to try it on your own repo. If Copilot is in your daily loop, this is a zero-cost experiment.</p>
-      <div class="meta"><span class="tag">Tooling</span><span class="tag">Web</span><a class="srclink" href="https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot">GitHub Changelog →</a></div>
+      <div class="meta"><span class="tag t-tools">Tooling</span><span class="tag t-web">Web</span><a class="srclink" href="https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot">GitHub Changelog →</a></div>
     </article>
   </section>
 
@@ -330,8 +400,9 @@
   </section>
 
   <footer>
-    Curated from Daily Dose of DS, ML Pills, Decoding AI, The Batch, Berkeley RDI, alphaXiv, Towards Data Science and friends.<br>
-    Updated daily. Resets every Monday.
+    Curated from Daily Dose of DS, ML Pills, Decoding AI, The Batch, Berkeley RDI, alphaXiv, Towards Data Science<br>
+    plus a daily sweep of the major labs and AI press.<br>
+    Updated every evening. Resets every Monday.
   </footer>
 
 </div>
