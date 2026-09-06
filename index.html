@@ -199,6 +199,28 @@
     margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--border);
     color: var(--muted); font-size: 12.5px; text-align: center; line-height: 1.8;
   }
+
+  /* ---------- DESKTOP ---------- */
+  @media (min-width: 1024px) {
+    .wrap { max-width: 1180px; }
+    .layout { display: grid; grid-template-columns: 400px minmax(0, 1fr); gap: 44px; align-items: start; }
+    aside.side {
+      position: sticky; top: 24px;
+      max-height: calc(100vh - 48px); overflow-y: auto;
+      scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+    }
+    aside.side .scan { margin-top: 0; }
+    section.day {
+      display: grid; grid-template-columns: 1fr 1fr;
+      column-gap: 14px; row-gap: 12px;
+    }
+    .day-head { grid-column: 1 / -1; margin-bottom: 2px; }
+    details.card { margin-bottom: 0; }
+    .day-head .line { margin-left: 8px; }
+    h1 { font-size: 44px; }
+    .sub { font-size: 16px; }
+  }
+
   @media (max-width: 480px) {
     h1 { font-size: 28px; }
     .day-head h2 { font-size: 22px; }
@@ -219,6 +241,8 @@
     <div class="week-range"><span class="dot"></span>This week: <b>Aug 31 – Sep 6, 2026</b></div>
   </header>
 
+  <div class="layout">
+  <aside class="side">
   <div class="scan">
     <div class="scan-head"><h2>The 30-second version</h2><span>17 stories, zero scrolling</span></div>
 
@@ -264,6 +288,8 @@
     </div>
   </div>
 
+  </aside>
+  <main class="main">
   <div class="pick">
     <div class="pick-inner">
       <span class="pick-label">Pick of the week</span>
@@ -479,6 +505,9 @@
     <h2>Archive</h2>
     <div class="archive-empty">Nothing here yet - the first archived week lands Monday, Sep 7.</div>
   </section>
+
+  </main>
+  </div>
 
   <footer>
     Curated from Daily Dose of DS, ML Pills, Decoding AI, The Batch, Berkeley RDI, alphaXiv, Towards Data Science<br>
