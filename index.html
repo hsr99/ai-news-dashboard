@@ -277,7 +277,7 @@
   <div class="layout">
   <aside class="side">
   <div class="scan">
-    <div class="scan-head"><h2>The 30-second version</h2><span>4 stories, zero scrolling</span></div>
+    <div class="scan-head"><h2>The 30-second version</h2><span>8 stories, zero scrolling</span></div>
 
     <div class="scan-day">
       <div class="sd">Mon 7</div>
@@ -285,6 +285,13 @@
       <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-kveng"><b>KV cache engineering:</b> <span class="rest">twelve serving techniques, mapped by what each one actually reduces.</span></a></div>
       <div class="scan-line t-industry"><span class="bullet"></span><a href="#s-alienmind"><b>"An Alien Mind":</b> <span class="rest">OpenAI's chief scientist argues for enforced safety bars on every lab.</span></a></div>
       <div class="scan-line t-models"><span class="bullet"></span><a href="#s-wemm"><b>WeMM-Embedding:</b> <span class="rest">WeChat's production multimodal embedder, open-sourced in three sizes.</span></a></div>
+    </div>
+    <div class="scan-day">
+      <div class="sd">Tue 8</div>
+      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-routing"><b>Routing can backfire:</b> <span class="rest">a naive LLM router inside an agent loop can cost more than one model.</span></a></div>
+      <div class="scan-line t-research"><span class="bullet"></span><a href="#s-fermat"><b>Fermat, formalized:</b> <span class="rest">Anthropic's agents proved it in Lean in 11 days.</span></a></div>
+      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-causal"><b>Causal inference, plain English:</b> <span class="rest">prediction finds correlations; this answers "did the change cause it?".</span></a></div>
+      <div class="scan-line t-event"><span class="bullet"></span><a href="#s-obs"><b>Free observability masterclass:</b> <span class="rest">Liz Fong-Jones on debugging agent runs - 3 live sessions left.</span></a></div>
     </div>
   </div>
 
@@ -344,6 +351,43 @@
         <p class="takeaway">WeChat's vision team released general-purpose text+image embedding models in 2B, 4B, and 9B sizes, built with two-stage training and knowledge distillation. This is not a benchmark toy: the same model family already serves WeChat's recommendation and search systems at a daily call volume in the billions.</p>
         <p class="why"><b>Why it matters:</b> if you are building multimodal RAG or retrieval, a production-hardened embedder at super-app scale is a serious candidate for your next eval bake-off - and the 2B tier is cheap enough to self-host.</p>
         <div class="meta"><a class="srclink" href="https://huggingface.co/tencent/WeMM-Embedding-9B">Hugging Face &rarr;</a></div>
+      </div>
+    </details>
+  </section>
+
+
+  <section class="day" id="tue">
+    <div class="day-head"><h2>Tuesday</h2><span class="date">Sep 8</span><span class="line"></span></div>
+
+    <details class="card t-craft" id="s-routing" data-url="https://blog.dailydoseofds.com/p/how-llm-routing-actually-works-in" data-title="LLM routing can cost more than not routing" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://blog.dailydoseofds.com/p/how-llm-routing-actually-works-in" target="_blank" rel="noopener">LLM routing can cost more than not routing</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span><span class="tag">Daily Dose of DS</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">Routing easy requests to cheap models works for isolated calls, but inside an agent loop a DIY router can cost more than one hardcoded model. The four failure modes: you pay for a classifier call on top of every request, general models are mediocre routers for vague requests like 'fix this', routing logic rots as models and prices change, and switching models mid-session invalidates the provider's prefix cache so the whole conversation re-bills at full price.</p>
+        <p class="why"><b>Why it matters:</b> if you are building a router to cut agent costs, the cache-invalidation point alone can erase the savings. Benchmark blended cost per session, not per request - or use infrastructure-level routing with a purpose-trained classifier instead of a general model.</p>
+        <div class="meta"><a class="srclink" href="https://blog.dailydoseofds.com/p/how-llm-routing-actually-works-in">Daily Dose of DS &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-research" id="s-fermat" data-url="https://www.anthropic.com/research/formalizing-fermats-last-theorem" data-title="Anthropic's agents formalized Fermat's Last Theorem in Lean in 11 days" data-tagcls="t-research"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem" target="_blank" rel="noopener">Anthropic's agents formalized Fermat's Last Theorem in Lean in 11 days</a></h3><div class="meta in-summary"><span class="tag t-research">Research</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">Anthropic used agentic workflows to produce a complete machine-checked Lean formalization of Fermat's Last Theorem in 11 days - work that took human experts years on similar projects. Nature covered it as a milestone for AI-driven formal mathematics.</p>
+        <p class="why"><b>Why it matters:</b> this is the strongest public demonstration yet of agents sustaining a long-horizon, verification-heavy project. The same loop - generate, machine-check, repair - is exactly what verified code generation needs, so the techniques here will show up in coding agents.</p>
+        <div class="meta"><a class="srclink" href="https://www.anthropic.com/research/formalizing-fermats-last-theorem">Anthropic &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-craft" id="s-causal" data-url="https://mlpills.substack.com/p/why-prediction-is-not-enough-causal" data-title="Why prediction is not enough: causal inference in plain English" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://mlpills.substack.com/p/why-prediction-is-not-enough-causal" target="_blank" rel="noopener">Why prediction is not enough: causal inference in plain English</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span><span class="tag">ML Pills</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">A friendly tour of the ideas prediction models cannot give you: counterfactuals, confounders, and when observational data can and cannot answer 'did the change cause the lift' - plus where Bayesian networks and do-calculus fit.</p>
+        <p class="why"><b>Why it matters:</b> product ML questions are usually causal, not predictive ('did the feature increase retention?'). Knowing the vocabulary - counterfactual, confounder, backdoor - keeps you from shipping a model that answers the wrong question confidently.</p>
+        
+      </div>
+    </details>
+
+    <details class="card t-event" id="s-obs" data-url="https://fandf.co/4zJkSR2" data-title="Free: Observability Engineering masterclass with Liz Fong-Jones (Honeycomb)" data-tagcls="t-event"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://fandf.co/4zJkSR2" target="_blank" rel="noopener">Free: Observability Engineering masterclass with Liz Fong-Jones (Honeycomb)</a></h3><div class="meta in-summary"><span class="tag t-event">Event</span><span class="tag">Honeycomb</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">A free six-session live masterclass on observability for LLM and agent systems, taught by Liz Fong-Jones (co-author of the O'Reilly observability book). Three sessions remain: Sep 16 (latency budgets), Sep 30 (cutting telemetry costs), Oct 14 (mobile, data pipelines, ML systems). First two are recorded.</p>
+        <p class="why"><b>Why it matters:</b> when an agent run fails you cannot replay it - all you have is what you recorded. This is the disciplined version of 'add more logs': high-cardinality context you can slice after the fact, which is exactly what debugging agent chains needs.</p>
+        <div class="meta"><a class="srclink" href="https://fandf.co/4zJkSR2">Register free &rarr;</a></div>
       </div>
     </details>
   </section>
