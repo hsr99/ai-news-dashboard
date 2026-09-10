@@ -277,7 +277,7 @@
   <div class="layout">
   <aside class="side">
   <div class="scan">
-    <div class="scan-head"><h2>The 30-second version</h2><span>13 stories, zero scrolling</span></div>
+    <div class="scan-head"><h2>The 30-second version</h2><span>17 stories, zero scrolling</span></div>
 
     <div class="scan-day">
       <div class="sd">Mon 7</div>
@@ -300,6 +300,13 @@
       <div class="scan-line t-research"><span class="bullet"></span><a href="#s-nstokes"><b>Navier-Stokes:</b> <span class="rest">OpenAI takes its models onto a Millennium Prize problem - with a credit dispute.</span></a></div>
       <div class="scan-line t-industry"><span class="bullet"></span><a href="#s-muse"><b>Meta Muse:</b> <span class="rest">a personal agent that can email, pay, and book across your apps.</span></a></div>
       <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-vllmx"><b>vLLM for agents:</b> <span class="rest">serving multi-turn, long-context, prefix-heavy traffic - the team's own playbook.</span></a></div>
+    </div>
+    <div class="scan-day">
+      <div class="sd">Thu 10</div>
+      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-headless"><b>Headless coding agents:</b> <span class="rest">move the harness off your terminal, run parallel attempts, review the best branch.</span></a></div>
+      <div class="scan-line t-safety"><span class="bullet"></span><a href="#s-beacon"><b>Agent runtime security:</b> <span class="rest">a local, normalized event trail for tool calls, commands, file writes, and approvals.</span></a></div>
+      <div class="scan-line t-tools"><span class="bullet"></span><a href="#s-cualite"><b>CUA-Lite:</b> <span class="rest">one interface for 15+ computer-use benchmarks, 10+ datasets, and 14 model families.</span></a></div>
+      <div class="scan-line t-research"><span class="bullet"></span><a href="#s-alphagenome"><b>AlphaGenome Atlas:</b> <span class="rest">precomputed predictions for all 9 billion possible single-letter DNA changes.</span></a></div>
     </div>
   </div>
 
@@ -441,6 +448,43 @@
         <p class="takeaway">vLLM's own write-up on optimizing for agentic workloads: multi-turn sessions with long contexts and heavy prefix reuse stress the serving stack differently than chat traffic. The post walks through KV cache management, parallelism and engine optimizations, and prefill/decode disaggregation - measuring on AgentX (SemiAnalysis's public agentic benchmark), with 130K total tokens per GPU-second on DeepSeek V4 Pro and a 14.6-106x serving-cost advantage over Opus 5 API pricing.</p>
         <p class="why"><b>Why it matters:</b> if you self-host models behind agents, chat-era serving assumptions leave most of the throughput on the table. This is the current playbook from the team behind the most-used open serving engine, measured against a public agentic benchmark you can rerun yourself.</p>
         <div class="meta"><a class="srclink" href="https://vllm.ai/blog/2026-09-08-vllm-agentx">vLLM blog &rarr;</a></div>
+      </div>
+    </details>
+  </section>
+
+
+  <section class="day" id="thu">
+    <div class="day-head"><h2>Thursday</h2><span class="date">Sep 10</span><span class="line"></span></div>
+
+    <details class="card t-craft" id="s-headless" data-url="https://www.decodingai.com/p/coding-agents-in-remote-headless" data-title="Stop babysitting coding agents: turn the harness into remote, parallel jobs" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://www.decodingai.com/p/coding-agents-in-remote-headless" target="_blank" rel="noopener">Stop babysitting coding agents: turn the harness into remote, parallel jobs</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span><span class="tag">Decoding AI</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">A build-along for separating an agent loop from its terminal UI, exposing a headless CLI, then running isolated jobs on Modal. The practical end state is several agents attempting the same task on separate branches while another agent or a human compares the results.</p>
+        <p class="why"><b>Why it matters:</b> useful background agents need a clean harness boundary, sandboxed workspaces, durable session state, and a review gate - not a terminal you watch all afternoon. Those are reusable patterns for CI agents and overnight engineering workflows.</p>
+        <div class="meta"><a class="srclink" href="https://www.decodingai.com/p/coding-agents-in-remote-headless">Decoding AI &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-safety" id="s-beacon" data-url="https://github.com/Asymptote-Labs/agent-beacon" data-title="Agent Beacon: a local runtime record for what your agents actually do" data-tagcls="t-safety"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://github.com/Asymptote-Labs/agent-beacon" target="_blank" rel="noopener">Agent Beacon: a local runtime record for what your agents actually do</a></h3><div class="meta in-summary"><span class="tag t-safety">Safety</span><span class="tag t-craft">From production</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">Agent Beacon is an open-source, local telemetry layer that normalizes activity from 23+ agent harnesses into one event stream. Tool calls, shell commands, file changes, approvals, session IDs, and whether evidence was observed or inferred become fields you can query while a run is still active.</p>
+        <p class="why"><b>Why it matters:</b> prompts and final answers are not enough to investigate an autonomous run. A normalized runtime trail gives security and platform teams the raw material for detection rules, incident reconstruction, and approval auditing across mixed agent stacks.</p>
+        <div class="meta"><a class="srclink" href="https://github.com/Asymptote-Labs/agent-beacon">GitHub &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-tools" id="s-cualite" data-url="https://cua-lite.github.io/" data-title="CUA-Lite unifies computer-use agent environments, training data, and model harnesses" data-tagcls="t-tools"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://cua-lite.github.io/" target="_blank" rel="noopener">CUA-Lite unifies computer-use agent environments, training data, and model harnesses</a></h3><div class="meta in-summary"><span class="tag t-tools">Tools</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">Berkeley's open platform wraps desktop, browser, and mobile environments in a Gym-style reset/step/close interface, standardizes supervised traces, and reuses model harnesses across evaluation, RL, and SFT. It already integrates 15+ benchmarks, 10+ public datasets, 14 model families, and optional VM-free sandboxes with 30,000+ verifiable tasks.</p>
+        <p class="why"><b>Why it matters:</b> computer-use work is still fragmented by environment-specific actions, observations, and data formats. A common interface makes it much easier to compare models honestly, replay traces, and move the same agent from eval into training without rewriting the stack.</p>
+        <div class="meta"><a class="srclink" href="https://cua-lite.github.io/">CUA-Lite &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-research" id="s-alphagenome" data-url="https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/" data-title="AlphaGenome Atlas maps predicted effects of all 9 billion possible single-letter DNA changes" data-tagcls="t-research"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/" target="_blank" rel="noopener">AlphaGenome Atlas maps predicted effects of all 9 billion possible single-letter DNA changes</a></h3><div class="meta in-summary"><span class="tag t-research">Research</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">Google DeepMind precomputed AlphaGenome predictions for every possible single-nucleotide substitution in the human genome and made the atlas available for interactive search and bulk download. Researchers can inspect likely effects on gene regulation without running billions of individual model inferences.</p>
+        <p class="why"><b>Why it matters:</b> this is a strong pattern for turning a costly foundation model into useful infrastructure: batch the full input space once, expose searchable outputs, and let domain experts explore hypotheses cheaply. It is as much a data-product lesson as a biology milestone.</p>
+        <div class="meta"><a class="srclink" href="https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/">Google DeepMind &rarr;</a></div>
       </div>
     </details>
   </section>
