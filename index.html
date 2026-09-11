@@ -277,7 +277,7 @@
   <div class="layout">
   <aside class="side">
   <div class="scan">
-    <div class="scan-head"><h2>The 30-second version</h2><span>17 stories, zero scrolling</span></div>
+    <div class="scan-head"><h2>The 30-second version</h2><span>21 stories, zero scrolling</span></div>
 
     <div class="scan-day">
       <div class="sd">Mon 7</div>
@@ -307,6 +307,13 @@
       <div class="scan-line t-safety"><span class="bullet"></span><a href="#s-beacon"><b>Agent runtime security:</b> <span class="rest">a local, normalized event trail for tool calls, commands, file writes, and approvals.</span></a></div>
       <div class="scan-line t-tools"><span class="bullet"></span><a href="#s-cualite"><b>CUA-Lite:</b> <span class="rest">one interface for 15+ computer-use benchmarks, 10+ datasets, and 14 model families.</span></a></div>
       <div class="scan-line t-research"><span class="bullet"></span><a href="#s-alphagenome"><b>AlphaGenome Atlas:</b> <span class="rest">precomputed predictions for all 9 billion possible single-letter DNA changes.</span></a></div>
+    </div>
+    <div class="scan-day">
+      <div class="sd">Fri 11</div>
+      <div class="scan-line t-tools"><span class="bullet"></span><a href="#s-agentsapi"><b>OpenAI Agents API:</b> <span class="rest">the harness behind Codex and ChatGPT, now one managed API call.</span></a></div>
+      <div class="scan-line t-models"><span class="bullet"></span><a href="#s-stt"><b>STT wave:</b> <span class="rest">Google, Meta, and Microsoft all shipped transcription models - every one under 4% WER.</span></a></div>
+      <div class="scan-line t-research"><span class="bullet"></span><a href="#s-selfcompact"><b>SelfCompact:</b> <span class="rest">agents compact their context at sub-task boundaries, not fixed token counts - no training needed.</span></a></div>
+      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-multiturn"><b>Beyond task graphs:</b> <span class="rest">multi-turn agents need session state that survives turns while execution state resets.</span></a></div>
     </div>
   </div>
 
@@ -485,6 +492,42 @@
         <p class="takeaway">Google DeepMind precomputed AlphaGenome predictions for every possible single-nucleotide substitution in the human genome and made the atlas available for interactive search and bulk download. Researchers can inspect likely effects on gene regulation without running billions of individual model inferences.</p>
         <p class="why"><b>Why it matters:</b> this is a strong pattern for turning a costly foundation model into useful infrastructure: batch the full input space once, expose searchable outputs, and let domain experts explore hypotheses cheaply. It is as much a data-product lesson as a biology milestone.</p>
         <div class="meta"><a class="srclink" href="https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/">Google DeepMind &rarr;</a></div>
+      </div>
+    </details>
+  </section>
+
+  <section class="day" id="fri">
+    <div class="day-head"><h2>Friday</h2><span class="date">Sep 11</span><span class="line"></span></div>
+
+    <details class="card t-tools" id="s-agentsapi" data-url="https://openai.com/index/introducing-the-agents-api/" data-title="OpenAI’s Agents API puts the Codex harness behind one managed API call" data-tagcls="t-tools"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://openai.com/index/introducing-the-agents-api/" target="_blank" rel="noopener">OpenAI’s Agents API puts the Codex harness behind one managed API call</a></h3><div class="meta in-summary"><span class="tag t-tools">Tools</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">OpenAI opened the Agents API in public beta: the same harness and infrastructure that runs Codex and ChatGPT for Work, exposed as a single call where you specify the task, model, tools, and environment. Agents run in the cloud for days at a time with files, code execution, saved intermediate state, and coordinated subagents.</p>
+        <p class="why"><b>Why it matters:</b> reliable long-running agents today mean rebuilding context management, tool orchestration, sandboxing, and crash durability yourself. A managed harness turns that into infrastructure - and even if you self-host, the API shape is a concrete spec for what a production agent runtime has to provide.</p>
+        <div class="meta"><a class="srclink" href="https://openai.com/index/introducing-the-agents-api/">OpenAI &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-models" id="s-stt" data-url="https://www.deeplearning.ai/the-batch/issue-370" data-title="Speech-to-text heats up: Google, Meta, and Microsoft all ship new transcription models" data-tagcls="t-models"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://www.deeplearning.ai/the-batch/issue-370" target="_blank" rel="noopener">Speech-to-text heats up: Google, Meta, and Microsoft all ship new transcription models</a></h3><div class="meta in-summary"><span class="tag t-models">Models</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">Three frontier speech-to-text models landed within days: Google’s Gemini 3.5 Transcribe (85+ languages, word-level timestamps, up to 8 speakers, about $0.30/hour pre-recorded), Meta’s Muse Voice Transcribe (best streaming error rate, 80ms audio chunks, 20+ speakers, $0.18/hour), and Microsoft’s MAI-Transcribe-2 (best non-streaming error rate at 2%, $0.10/hour in preview). All sit under 4% word error rate on Artificial Analysis’ benchmark.</p>
+        <p class="why"><b>Why it matters:</b> transcription is the gating component for voice agents, and this wave resets both the quality bar and the unit economics. The streaming vs non-streaming split also gives you a real evaluation axis: Muse leads streaming, MAI-Transcribe-2 leads batch - pick per workload, not per brand.</p>
+        <div class="meta"><a class="srclink" href="https://www.deeplearning.ai/the-batch/issue-370">The Batch &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-research" id="s-selfcompact" data-url="https://arxiv.org/abs/2606.23525" data-title="SelfCompact: agents that compact their own context at meaningful stopping points" data-tagcls="t-research"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://arxiv.org/abs/2606.23525" target="_blank" rel="noopener">SelfCompact: agents that compact their own context at meaningful stopping points</a></h3><div class="meta in-summary"><span class="tag t-research">Research</span><span class="tag t-craft">Craft</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">Johns Hopkins and Apple researchers add a probe to an agent’s loop that every 16K tokens asks the model whether it sits at a clean break - sub-task finished, clear progress - and only then summarizes 50-100K tokens of trace down to 1-3K. Across six benchmarks it beats both fixed-interval summarization and no compaction, with zero parameter updates.</p>
+        <p class="why"><b>Why it matters:</b> most compaction today fires on a blunt token-count trigger and can delete partial results mid-step. A rubric-based "am I at a good stopping point" check is a design pattern you can bolt onto your own agent loop this week, no fine-tuning required - and the ablation shows the rubric, not compaction itself, drives the gains.</p>
+        <div class="meta"><a class="srclink" href="https://arxiv.org/abs/2606.23525">arXiv &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-craft" id="s-multiturn" data-url="https://blog.dailydoseofds.com/p/why-multi-turn-agents-need-more-than" data-title="Why multi-turn agents need more than a task graph" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://blog.dailydoseofds.com/p/why-multi-turn-agents-need-more-than" target="_blank" rel="noopener">Why multi-turn agents need more than a task graph</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">Daily Dose of DS breaks down why graph-per-run agent frameworks fall over in conversation: every message starts a fresh graph run, yet session context must persist across turns while completed nodes and cached outputs reset. The hands-on build uses CrewAI’s conversational flows to ship a support agent with session continuity, routing, clean outputs, and session-level tracing.</p>
+        <p class="why"><b>Why it matters:</b> if your agent faces users in chat, mixing conversation state with execution bookkeeping is how you get replayed outputs and lost context mid-session. Separating the two lifetimes - conversation survives, execution resets - is a concrete fix that transfers to whatever framework you run.</p>
+        <div class="meta"><a class="srclink" href="https://blog.dailydoseofds.com/p/why-multi-turn-agents-need-more-than">Daily Dose of DS &rarr;</a></div>
       </div>
     </details>
   </section>
