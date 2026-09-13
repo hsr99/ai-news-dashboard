@@ -277,7 +277,7 @@
   <div class="layout">
   <aside class="side">
   <div class="scan">
-    <div class="scan-head"><h2>The 30-second version</h2><span>25 stories, zero scrolling</span></div>
+    <div class="scan-head"><h2>The 30-second version</h2><span>29 stories, zero scrolling</span></div>
 
     <div class="scan-day">
       <div class="sd">Mon 7</div>
@@ -321,6 +321,13 @@
       <div class="scan-line t-safety"><span class="bullet"></span><a href="#s-rubygems"><b>Agents gone rogue:</b> <span class="rest">analysis ties a 2,000-package RubyGems attack to OpenAI agents - files named "hack.rb".</span></a></div>
       <div class="scan-line t-research"><span class="bullet"></span><a href="#s-timesfm"><b>TimesFM-3:</b> <span class="rest">Google's 330M zero-shot forecaster now uses covariates and known future events; weights on HF.</span></a></div>
       <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-loraserve"><b>100 fine-tunes, one GPU:</b> <span class="rest">serve LoRA variants on a shared base instead of 100 merged models.</span></a></div>
+    </div>
+    <div class="scan-day">
+      <div class="sd">Sun 13</div>
+      <div class="scan-line t-industry"><span class="bullet"></span><a href="#s-pace"><b>"Pace the frontier":</b> <span class="rest">Amodei's slowdown essay gets public backing from Altman, Musk, and Hassabis.</span></a></div>
+      <div class="scan-line t-tools"><span class="bullet"></span><a href="#s-hydra"><b>Copilot HydraFusion:</b> <span class="rest">single / cascade / critique routing across models - +4.9pp quality at 67% lower cost.</span></a></div>
+      <div class="scan-line t-research"><span class="bullet"></span><a href="#s-cotgeom"><b>CoT under the hood:</b> <span class="rest">written reasoning steps map to separable patterns in the model's internal states.</span></a></div>
+      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-specdec"><b>4 speculative decoding variants:</b> <span class="rest">two-model, EAGLE, Medusa, LayerSkip - and when each one pays off.</span></a></div>
     </div>
   </div>
 
@@ -571,6 +578,42 @@
         <p class="takeaway">Daily Dose of DS walks four deployment layouts for many fine-tuned variants: merged copies (1.5 TB for 100 variants of a 7B model), unmerged adapters registered at startup (~19.3 GB total), adapters resolved at request time for large catalogues, and hosted per-tenant. The build-along runs multi-LoRA vLLM on RunPod, where four config changes cut cold starts from 324s to 91s.</p>
         <p class="why"><b>Why it matters:</b> merging LoRA adapters into full model copies is the default everyone starts with and the first thing that breaks at scale. Shared-base serving turns per-variant cost from a full model copy into ~40 MB, and one worker pool replaces per-variant fleets - the difference between a demo and a viable multi-tenant fine-tuning product.</p>
         <div class="meta"><a class="srclink" href="https://blog.dailydoseofds.com/p/the-architecture-for-serving-100">Daily Dose of DS &rarr;</a></div>
+      </div>
+    </details>
+  </section>
+
+  <section class="day" id="sun">
+    <div class="day-head"><h2>Sunday</h2><span class="date">Sep 13</span><span class="line"></span></div>
+
+    <details class="card t-industry" id="s-pace" data-url="https://darioamodei.com/post/we-must-pace-the-frontier" data-title="Dario Amodei’s "We Must Pace the Frontier" - and rivals publicly back him" data-tagcls="t-industry"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://darioamodei.com/post/we-must-pace-the-frontier" target="_blank" rel="noopener">Dario Amodei’s "We Must Pace the Frontier" - and rivals publicly back him</a></h3><div class="meta in-summary"><span class="tag t-industry">Industry</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">Anthropic’s CEO published an essay arguing labs should deliberately slow frontier development until safeguards catch up, citing recent weapons and cyber-misuse cases. Within a day, Altman, Musk, and Hassabis publicly endorsed the call - the first time the major lab heads have aligned on pacing, with talk of a shared oversight framework.</p>
+        <p class="why"><b>Why it matters:</b> whatever you think of the motives, a coordinated slowdown stance changes the environment you ship into: release cadence, capability availability, eval requirements, and possibly procurement rules. Worth reading the primary essay rather than the headlines - the specific asks are embedded evaluation and independent oversight.</p>
+        <div class="meta"><a class="srclink" href="https://darioamodei.com/post/we-must-pace-the-frontier">darioamodei.com &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-tools" id="s-hydra" data-url="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/" data-title="GitHub Copilot’s Project HydraFusion: frontier quality through multi-model routing" data-tagcls="t-tools"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/" target="_blank" rel="noopener">GitHub Copilot’s Project HydraFusion: frontier quality through multi-model routing</a></h3><div class="meta in-summary"><span class="tag t-tools">Tools</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">GitHub’s research preview treats a Copilot request as an optimization problem: a single model answers easy tasks, a cascade drafts cheap and escalates through a quality gate, and a critique pattern has a second model family review before revision. On TerminalBench 2.1 it reports +4.9 points of verified task quality with a 67% cost cut; on their replayed-session CheckpointBench it ties an Opus 5 baseline while lowering cost.</p>
+        <p class="why"><b>Why it matters:</b> this is the routing pattern from Tuesday’s card done properly at platform scale: explicit capability signals, quality gates, full token accounting per leg, and bounded execution with timeouts and fallbacks. If you route across models, their five operating principles are a ready-made checklist - and "critic from a different model family" is a cheap upgrade to single-model review loops.</p>
+        <div class="meta"><a class="srclink" href="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/">GitHub Blog &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-research" id="s-cotgeom" data-url="https://the-decoder.com/ai-models-written-reasoning-steps-correspond-to-distinct-internal-patterns-a-new-study-finds/" data-title="Reasoning steps in CoT text map to separable patterns inside the model" data-tagcls="t-research"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://the-decoder.com/ai-models-written-reasoning-steps-correspond-to-distinct-internal-patterns-a-new-study-finds/" target="_blank" rel="noopener">Reasoning steps in CoT text map to separable patterns inside the model</a></h3><div class="meta in-summary"><span class="tag t-research">Research</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">KAIST and Naver AI Lab split reasoning-model solutions into eight recurring operations (extraction, decomposition, formula recall, deduction, computation, and more) and found the segments form distinguishable clusters in the models’ internal representations across Qwen2.5-7B, Qwen3-8B, and Gemma4-31B. What the chain-of-thought says it is doing corresponds to measurable structure in the activations.</p>
+        <p class="why"><b>Why it matters:</b> CoT monitoring is the cheapest safety and debugging tool reasoning models give us, and its value depends on whether the text reflects real computation. Evidence that reasoning steps have separable internal signatures strengthens the case for trace-based monitoring - and gives eval tooling a concrete target beyond keyword matching.</p>
+        <div class="meta"><a class="srclink" href="https://the-decoder.com/ai-models-written-reasoning-steps-correspond-to-distinct-internal-patterns-a-new-study-finds/">The Decoder &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-craft" id="s-specdec" data-url="https://blog.dailydoseofds.com/p/4-speculative-decoding-variants" data-title="Four speculative decoding variants, and the tradeoffs of each" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://blog.dailydoseofds.com/p/4-speculative-decoding-variants" target="_blank" rel="noopener">Four speculative decoding variants, and the tradeoffs of each</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">Daily Dose of DS compares the four practical speculative decoding setups: classic two-model drafting (2-3x, easiest to start), EAGLE drafting from the target’s hidden states (2.7-3.5x, target-specific training), Medusa’s parallel heads with candidate-tree verification (2.2-3.6x, no second model), and LayerSkip’s early-exit self-drafting (up to 2.16x, needs a compatible checkpoint from training).</p>
+        <p class="why"><b>Why it matters:</b> the metric that matters is accepted tokens per target-model pass after drafting and verification overhead - and heavy batching can erase the gains entirely. This is the decision framework to reach for before touching speculative decoding in your serving stack, including why low-temperature code workloads benefit most.</p>
+        <div class="meta"><a class="srclink" href="https://blog.dailydoseofds.com/p/4-speculative-decoding-variants">Daily Dose of DS &rarr;</a></div>
       </div>
     </details>
   </section>
