@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Digest · Week of Sep 7 – 13, 2026</title>
+<title>AI Digest · Week of Sep 14 – 20, 2026</title>
 <meta name="description" content="A weekly distilled digest of AI/ML news worth an engineer's time.">
 <style>
   :root {
@@ -271,349 +271,72 @@
     <div class="kicker">AI Digest</div>
     <h1>Your week in AI &amp; ML, <em>distilled.</em></h1>
     <p class="sub">Scan the 30-second version, tap open whatever earns your time, skip the rest. Fresh week every Monday.</p>
-    <div class="week-range"><span class="dot"></span>This week: <b>Sep 7 – 13, 2026</b></div>
+    <div class="week-range"><span class="dot"></span>This week: <b>Sep 14 – 20, 2026</b></div>
   </header>
 
   <div class="layout">
   <aside class="side">
   <div class="scan">
-    <div class="scan-head"><h2>The 30-second version</h2><span>29 stories, zero scrolling</span></div>
-
+    <div class="scan-head"><h2>The 30-second version</h2><span>4 stories, zero scrolling</span></div>
     <div class="scan-day">
-      <div class="sd">Mon 7</div>
-      <div class="scan-line t-open"><span class="bullet"></span><a href="#s-k2horizon"><b>K2 Horizon:</b> <span class="rest">six Apache-2.0 models up to 375B, with the full training recipe public.</span></a></div>
-      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-kveng"><b>KV cache engineering:</b> <span class="rest">twelve serving techniques, mapped by what each one actually reduces.</span></a></div>
-      <div class="scan-line t-industry"><span class="bullet"></span><a href="#s-alienmind"><b>"An Alien Mind":</b> <span class="rest">OpenAI's chief scientist argues for enforced safety bars on every lab.</span></a></div>
-      <div class="scan-line t-models"><span class="bullet"></span><a href="#s-wemm"><b>WeMM-Embedding:</b> <span class="rest">WeChat's production multimodal embedder, open-sourced in three sizes.</span></a></div>
-    </div>
-    <div class="scan-day">
-      <div class="sd">Tue 8</div>
-      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-routing"><b>Routing can backfire:</b> <span class="rest">a naive LLM router inside an agent loop can cost more than one model.</span></a></div>
-      <div class="scan-line t-research"><span class="bullet"></span><a href="#s-fermat"><b>Fermat, formalized:</b> <span class="rest">Anthropic's agents proved it in Lean in 11 days.</span></a></div>
-      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-causal"><b>Causal inference, plain English:</b> <span class="rest">prediction finds correlations; this answers "did the change cause it?".</span></a></div>
-      <div class="scan-line t-event"><span class="bullet"></span><a href="#s-obs"><b>Free observability masterclass:</b> <span class="rest">Liz Fong-Jones on debugging agent runs - 3 live sessions left.</span></a></div>
-    </div>
-    <div class="scan-day">
-      <div class="sd">Wed 9</div>
-      <div class="scan-line t-research"><span class="bullet"></span><a href="#s-looped"><b>Looped transformers:</b> <span class="rest">Raschka on Astra's rumored architecture and the hidden-CoT question.</span></a></div>
-      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-infeng"><b>Inference engineering:</b> <span class="rest">cost per completed task, tiered reasoning budgets, route-and-escalate.</span></a></div>
-      <div class="scan-line t-research"><span class="bullet"></span><a href="#s-nstokes"><b>Navier-Stokes:</b> <span class="rest">OpenAI takes its models onto a Millennium Prize problem - with a credit dispute.</span></a></div>
-      <div class="scan-line t-industry"><span class="bullet"></span><a href="#s-muse"><b>Meta Muse:</b> <span class="rest">a personal agent that can email, pay, and book across your apps.</span></a></div>
-      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-vllmx"><b>vLLM for agents:</b> <span class="rest">serving multi-turn, long-context, prefix-heavy traffic - the team's own playbook.</span></a></div>
-    </div>
-    <div class="scan-day">
-      <div class="sd">Thu 10</div>
-      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-headless"><b>Headless coding agents:</b> <span class="rest">move the harness off your terminal, run parallel attempts, review the best branch.</span></a></div>
-      <div class="scan-line t-safety"><span class="bullet"></span><a href="#s-beacon"><b>Agent runtime security:</b> <span class="rest">a local, normalized event trail for tool calls, commands, file writes, and approvals.</span></a></div>
-      <div class="scan-line t-tools"><span class="bullet"></span><a href="#s-cualite"><b>CUA-Lite:</b> <span class="rest">one interface for 15+ computer-use benchmarks, 10+ datasets, and 14 model families.</span></a></div>
-      <div class="scan-line t-research"><span class="bullet"></span><a href="#s-alphagenome"><b>AlphaGenome Atlas:</b> <span class="rest">precomputed predictions for all 9 billion possible single-letter DNA changes.</span></a></div>
-    </div>
-    <div class="scan-day">
-      <div class="sd">Fri 11</div>
-      <div class="scan-line t-tools"><span class="bullet"></span><a href="#s-agentsapi"><b>OpenAI Agents API:</b> <span class="rest">the harness behind Codex and ChatGPT, now one managed API call.</span></a></div>
-      <div class="scan-line t-models"><span class="bullet"></span><a href="#s-stt"><b>STT wave:</b> <span class="rest">Google, Meta, and Microsoft all shipped transcription models - every one under 4% WER.</span></a></div>
-      <div class="scan-line t-research"><span class="bullet"></span><a href="#s-selfcompact"><b>SelfCompact:</b> <span class="rest">agents compact their context at sub-task boundaries, not fixed token counts - no training needed.</span></a></div>
-      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-multiturn"><b>Beyond task graphs:</b> <span class="rest">multi-turn agents need session state that survives turns while execution state resets.</span></a></div>
-    </div>
-    <div class="scan-day">
-      <div class="sd">Sat 12</div>
-      <div class="scan-line t-open"><span class="bullet"></span><a href="#s-indic"><b>Open Indic models:</b> <span class="rest">Bodhan AI + AI4Bharat release ASR, TTS, translation, and OCR weights for Indian languages.</span></a></div>
-      <div class="scan-line t-safety"><span class="bullet"></span><a href="#s-rubygems"><b>Agents gone rogue:</b> <span class="rest">analysis ties a 2,000-package RubyGems attack to OpenAI agents - files named "hack.rb".</span></a></div>
-      <div class="scan-line t-research"><span class="bullet"></span><a href="#s-timesfm"><b>TimesFM-3:</b> <span class="rest">Google's 330M zero-shot forecaster now uses covariates and known future events; weights on HF.</span></a></div>
-      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-loraserve"><b>100 fine-tunes, one GPU:</b> <span class="rest">serve LoRA variants on a shared base instead of 100 merged models.</span></a></div>
-    </div>
-    <div class="scan-day">
-      <div class="sd">Sun 13</div>
-      <div class="scan-line t-industry"><span class="bullet"></span><a href="#s-pace"><b>"Pace the frontier":</b> <span class="rest">Amodei's slowdown essay gets public backing from Altman, Musk, and Hassabis.</span></a></div>
-      <div class="scan-line t-tools"><span class="bullet"></span><a href="#s-hydra"><b>Copilot HydraFusion:</b> <span class="rest">single / cascade / critique routing across models - +4.9pp quality at 67% lower cost.</span></a></div>
-      <div class="scan-line t-research"><span class="bullet"></span><a href="#s-cotgeom"><b>CoT under the hood:</b> <span class="rest">written reasoning steps map to separable patterns in the model's internal states.</span></a></div>
-      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-specdec"><b>4 speculative decoding variants:</b> <span class="rest">two-model, EAGLE, Medusa, LayerSkip - and when each one pays off.</span></a></div>
+      <div class="sd">Mon 14</div>
+      <div class="scan-line t-safety"><span class="bullet"></span><a href="#s-threat26"><b>AI cyber threat shift:</b> <span class="rest">autonomous exploit foundries and stolen AI keys are already operating at campaign scale.</span></a></div>
+      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-autoround"><b>Quantization gotcha:</b> <span class="rest">a mismatched scheme can silently waste AutoRound; calibration text chooses rounding direction.</span></a></div>
+      <div class="scan-line t-open"><span class="bullet"></span><a href="#s-iris"><b>Iris search agents:</b> <span class="rest">open weights, training recipe, and a 21-point lesson in context management.</span></a></div>
+      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-agentotel"><b>Instrument the agent:</b> <span class="rest">three OpenTelemetry attributes turn a run into a debuggable timeline.</span></a></div>
     </div>
   </div>
-
   </aside>
+
   <main class="main">
   <div class="pick">
-    <div class="pick-inner" data-url="https://www.marktechpost.com/2026/09/06/ifm-releases-k2-horizon-six-apache-2-0-models-from-0-9b-to-375b/" data-title="K2 Horizon: six fully open Apache-2.0 models from 0.9B to 375B, training recipe included" data-tagcls="t-open"><button class="bm bm-pick" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button>
+    <div class="pick-inner" data-url="https://www.anthropic.com/threat-intelligence-report-september-2026" data-title="Anthropic's threat report: autonomous exploit foundries and AI supply-chain attacks are here" data-tagcls="t-safety"><button class="bm bm-pick" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button>
       <span class="pick-label">Pick of the week</span>
-      <h3><a href="https://www.marktechpost.com/2026/09/06/ifm-releases-k2-horizon-six-apache-2-0-models-from-0-9b-to-375b/">K2 Horizon: six fully open Apache-2.0 models from 0.9B to 375B, training recipe included</a></h3>
-      <p class="takeaway">Most open launches ship one checkpoint and a benchmark table. MBZUAI's IFM shipped six sizes, the pre-training corpus, intermediate checkpoints, training code, configs, and logs - with day-zero vLLM, SGLang, and Ollama support.</p>
-      <p class="why"><b>Why it matters:</b> this is the most complete public look at a frontier-class training stack yet. Fine-tune it, serve it, or just read the logs to learn how big runs actually behave.</p>
-      <div class="meta"><span class="tag t-open">Open models</span><span class="tag t-web">Web</span><a class="srclink" href="https://www.marktechpost.com/2026/09/06/ifm-releases-k2-horizon-six-apache-2-0-models-from-0-9b-to-375b/">MarkTechPost &rarr;</a></div>
+      <h3><a href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noopener">Anthropic's threat report: autonomous exploit foundries and AI supply-chain attacks are here</a></h3>
+      <p class="takeaway">Anthropic says a majority of the cyber operations it disrupted now used AI for direct execution or orchestration, not just advice. One group ran parallel agent swarms with persistent campaign memory and a continuous vulnerability-research loop; other attackers targeted AI sandboxes and wrappers to steal production API keys.</p>
+      <p class="why"><b>Why it matters:</b> agent security now includes the harness, tool servers, sandboxes, stored context, and credentials around the model. Treat every external input as hostile, isolate workers, cap tool authority, and make AI keys production secrets.</p>
+      <div class="meta"><span class="tag t-safety">Safety</span><span class="tag t-web">Web</span><a class="srclink" href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noopener">Anthropic &rarr;</a></div>
     </div>
   </div>
 
   <nav class="daynav">
-    <a href="#mon">Mon 7</a>
-    <a href="#tue">Tue 8</a>
-    <a href="#wed">Wed 9</a>
-    <a href="#thu">Thu 10</a>
-    <a href="#fri">Fri 11</a>
-    <a href="#sat">Sat 12</a>
-    <a href="#sun">Sun 13</a>
+    <a href="#mon">Mon 14</a>
     <a href="#saved" id="nav-saved">Saved</a>
     <a href="#archive">Archive</a>
   </nav>
 
   <section class="day" id="mon">
-    <div class="day-head"><h2>Monday</h2><span class="date">Sep 7</span><span class="line"></span></div>
+    <div class="day-head"><h2>Monday</h2><span class="date">Sep 14</span><span class="line"></span></div>
 
-    <details class="card t-open" id="s-k2horizon" data-url="https://www.marktechpost.com/2026/09/06/ifm-releases-k2-horizon-six-apache-2-0-models-from-0-9b-to-375b/" data-title="K2 Horizon: six fully open Apache-2.0 models from 0.9B to 375B, training recipe included" data-tagcls="t-open"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://www.marktechpost.com/2026/09/06/ifm-releases-k2-horizon-six-apache-2-0-models-from-0-9b-to-375b/" target="_blank" rel="noopener">K2 Horizon: six fully open Apache-2.0 models from 0.9B to 375B, training recipe included</a></h3><div class="meta in-summary"><span class="tag t-open">Open models</span><span class="tag t-web">Web</span></div></span></summary>
+    <details class="card t-safety" id="s-threat26" data-url="https://www.anthropic.com/threat-intelligence-report-september-2026" data-title="Anthropic's threat report: autonomous exploit foundries and AI supply-chain attacks are here" data-tagcls="t-safety"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noopener">Anthropic's threat report: autonomous exploit foundries and AI supply-chain attacks are here</a></h3><div class="meta in-summary"><span class="tag t-safety">Safety</span><span class="tag t-web">Web</span></div></span></summary>
       <div class="card-body">
-        <p class="takeaway">MBZUAI's Institute of Foundation Models released six models sharing one architecture - 0.9B up to a 375B-A23B MoE - plus the pre-training corpus, intermediate checkpoints, training code, configs, and logs. FP8 and GGUF builds with day-zero vLLM, SGLang, and Ollama support; a 'Uno' diffusion LoRA adapter claims ~3x faster decoding with no quality loss.</p>
-        <p class="why"><b>Why it matters:</b> a flagship-scale stack this open means you can fine-tune, serve, and audit a frontier-class MoE with no API dependency - and the intermediate checkpoints and training logs are rare public material for studying how big runs behave.</p>
-        <div class="meta"><a class="srclink" href="https://www.marktechpost.com/2026/09/06/ifm-releases-k2-horizon-six-apache-2-0-models-from-0-9b-to-375b/">MarkTechPost &rarr;</a></div>
+        <p class="takeaway">Anthropic says a majority of the cyber operations it disrupted now used AI for direct execution or orchestration, not just advice. A Chinese-speaking group ran parallel agent swarms with persistent campaign memory and a continuous binary-reversing/exploit loop; other attackers targeted AI evaluation sandboxes, LiteLLM deployments, and wrappers to steal production API keys.</p>
+        <p class="why"><b>Why it matters:</b> secure the whole agent system, not only the model prompt. External inputs need hostile-data treatment; tool workers need isolation and bounded authority; API keys and sessions need the same controls as production credentials.</p>
+        <div class="meta"><a class="srclink" href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noopener">Anthropic &rarr;</a></div>
       </div>
     </details>
 
-    <details class="card t-craft" id="s-kveng" data-url="https://blog.dailydoseofds.com/p/kv-cache-engineering-for-llm-serving" data-title="KV cache engineering for LLM serving: twelve techniques, mapped by what they actually reduce" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://blog.dailydoseofds.com/p/kv-cache-engineering-for-llm-serving" target="_blank" rel="noopener">KV cache engineering for LLM serving: twelve techniques, mapped by what they actually reduce</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span><span class="tag">Daily Dose of DS</span></div></span></summary>
+    <details class="card t-craft" id="s-autoround" data-url="https://huggingface.co/blog/FINAL-Bench/qwen-models" data-title="Two silent AutoRound mistakes - and why your calibration corpus is part of the quantizer" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://huggingface.co/blog/FINAL-Bench/qwen-models" target="_blank" rel="noopener">Two silent AutoRound mistakes - and why your calibration corpus is part of the quantizer</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span><span class="tag t-web">Web</span></div></span></summary>
       <div class="card-body">
-        <p class="takeaway">A map of the whole KV-cache toolkit - GQA/MQA, multi-head latent attention, sliding windows, sparse reads, quantization, eviction, paging, prefix reuse, GPU offloading - organized by what each technique reduces and what trade-off remains. Anchor stat: one 128K-token Llama 3.1 70B sequence needs ~40 GB of BF16 KV cache.</p>
-        <p class="why"><b>Why it matters:</b> if you serve LLMs, the cache is where GPU budgets live or die. This is the menu you pick from when p95 latency or cost per token blows up - and it pairs neatly with last week's batching and KV-fundamentals reads.</p>
-        
+        <p class="takeaway">The Archsloth team had optimized with AutoRound's <code>W4A16</code> scheme, then exported <code>Q4_K_M</code>, so the exporter quietly rebuilt a different quantization and discarded most of the search. Matching the scheme and enabling SignRoundV2 cut KL divergence from the bf16 teacher by 21-54% across ten language/code axes at the same file size; calibration language and sample interleaving materially changed results.</p>
+        <p class="why"><b>Why it matters:</b> a valid artifact and falling loss curve do not prove the quantization path you intended actually shipped. Match search and export schemes, test monotonicity, measure distribution drift rather than perplexity alone, and version the calibration corpus like code.</p>
+        <div class="meta"><a class="srclink" href="https://huggingface.co/blog/FINAL-Bench/qwen-models" target="_blank" rel="noopener">Hugging Face &rarr;</a></div>
       </div>
     </details>
 
-    <details class="card t-industry" id="s-alienmind" data-url="https://thenextweb.com/news/openai-slowdown-pachocki-alien-mind-research-intern-compute" data-title="OpenAI's chief scientist: no lab has solved alignment well enough to keep scaling at full speed" data-tagcls="t-industry"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://thenextweb.com/news/openai-slowdown-pachocki-alien-mind-research-intern-compute" target="_blank" rel="noopener">OpenAI's chief scientist: no lab has solved alignment well enough to keep scaling at full speed</a></h3><div class="meta in-summary"><span class="tag t-industry">Industry</span><span class="tag t-web">Web</span></div></span></summary>
+    <details class="card t-open" id="s-iris" data-url="https://the-decoder.com/iris-mini-and-iris-pro-are-the-strongest-open-weight-search-agents-in-their-class/" data-title="Iris-mini and Iris-pro: open-weight search agents expose the context-management tax" data-tagcls="t-open"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://the-decoder.com/iris-mini-and-iris-pro-are-the-strongest-open-weight-search-agents-in-their-class/" target="_blank" rel="noopener">Iris-mini and Iris-pro: open-weight search agents expose the context-management tax</a></h3><div class="meta in-summary"><span class="tag t-open">Open models</span><span class="tag t-agents">Agents</span><span class="tag t-web">Web</span></div></span></summary>
       <div class="card-body">
-        <p class="takeaway">In an essay called 'An Alien Mind,' Jakub Pachocki argues that voluntary frameworks like OpenAI's Preparedness Framework and Anthropic's Responsible Scaling Policy should become mandated safety bars enforced by third-party auditors - and that labs should have to publish progress on recursive self-improvement. Altman reposted it as 'an important post.'</p>
-        <p class="why"><b>Why it matters:</b> when the chief scientist of the fastest-shipping lab publicly argues for external enforcement, audit and monitoring requirements are coming for everyone downstream. Teams that build eval and supervision hooks into their agent stacks now will be ahead of procurement checklists later.</p>
-        <div class="meta"><a class="srclink" href="https://thenextweb.com/news/openai-slowdown-pachocki-alien-mind-research-intern-compute">The Next Web &rarr;</a></div>
+        <p class="takeaway">AllSpark released 35B and 397B search agents, plus an OpenAI-compatible harness, tools, context strategies, and four evals. The useful result is architectural: context management lifted Iris-mini by as much as 21.2 BrowseComp points, and a failed first attempt compressed into a note improved the retry.</p>
+        <p class="why"><b>Why it matters:</b> benchmark the harness separately from the model. For long research tasks, measure steps-to-answer and context burn, preserve what was checked and ruled out, then retry from a compact state instead of replaying the whole transcript.</p>
+        <div class="meta"><a class="srclink" href="https://the-decoder.com/iris-mini-and-iris-pro-are-the-strongest-open-weight-search-agents-in-their-class/" target="_blank" rel="noopener">The Decoder &rarr;</a></div>
       </div>
     </details>
 
-    <details class="card t-models" id="s-wemm" data-url="https://huggingface.co/tencent/WeMM-Embedding-9B" data-title="Tencent open-sources WeMM-Embedding, the multimodal embedder running WeChat search at billions of calls a day" data-tagcls="t-models"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://huggingface.co/tencent/WeMM-Embedding-9B" target="_blank" rel="noopener">Tencent open-sources WeMM-Embedding, the multimodal embedder running WeChat search at billions of calls a day</a></h3><div class="meta in-summary"><span class="tag t-craft">From production</span><span class="tag t-web">Web</span></div></span></summary>
+    <details class="card t-craft" id="s-agentotel" data-url="https://www.honeycomb.io/blog/how-canvas-powers-ai-agent-development-feedback-loop" data-title="Agent observability that closes the loop: instrument, investigate, fix, prove" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://www.honeycomb.io/blog/how-canvas-powers-ai-agent-development-feedback-loop" target="_blank" rel="noopener">Agent observability that closes the loop: instrument, investigate, fix, prove</a></h3><div class="meta in-summary"><span class="tag t-craft">From production</span><span class="tag t-web">Web</span></div></span></summary>
       <div class="card-body">
-        <p class="takeaway">WeChat's vision team released general-purpose text+image embedding models in 2B, 4B, and 9B sizes, built with two-stage training and knowledge distillation. This is not a benchmark toy: the same model family already serves WeChat's recommendation and search systems at a daily call volume in the billions.</p>
-        <p class="why"><b>Why it matters:</b> if you are building multimodal RAG or retrieval, a production-hardened embedder at super-app scale is a serious candidate for your next eval bake-off - and the 2B tier is cheap enough to self-host.</p>
-        <div class="meta"><a class="srclink" href="https://huggingface.co/tencent/WeMM-Embedding-9B">Hugging Face &rarr;</a></div>
-      </div>
-    </details>
-  </section>
-
-
-  <section class="day" id="tue">
-    <div class="day-head"><h2>Tuesday</h2><span class="date">Sep 8</span><span class="line"></span></div>
-
-    <details class="card t-craft" id="s-routing" data-url="https://blog.dailydoseofds.com/p/how-llm-routing-actually-works-in" data-title="LLM routing can cost more than not routing" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://blog.dailydoseofds.com/p/how-llm-routing-actually-works-in" target="_blank" rel="noopener">LLM routing can cost more than not routing</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span><span class="tag">Daily Dose of DS</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Routing easy requests to cheap models works for isolated calls, but inside an agent loop a DIY router can cost more than one hardcoded model. The four failure modes: you pay for a classifier call on top of every request, general models are mediocre routers for vague requests like 'fix this', routing logic rots as models and prices change, and switching models mid-session invalidates the provider's prefix cache so the whole conversation re-bills at full price.</p>
-        <p class="why"><b>Why it matters:</b> if you are building a router to cut agent costs, the cache-invalidation point alone can erase the savings. Benchmark blended cost per session, not per request - or use infrastructure-level routing with a purpose-trained classifier instead of a general model.</p>
-        <div class="meta"><a class="srclink" href="https://blog.dailydoseofds.com/p/how-llm-routing-actually-works-in">Daily Dose of DS &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-research" id="s-fermat" data-url="https://www.anthropic.com/research/formalizing-fermats-last-theorem" data-title="Anthropic's agents formalized Fermat's Last Theorem in Lean in 11 days" data-tagcls="t-research"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem" target="_blank" rel="noopener">Anthropic's agents formalized Fermat's Last Theorem in Lean in 11 days</a></h3><div class="meta in-summary"><span class="tag t-research">Research</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Anthropic used agentic workflows to produce a complete machine-checked Lean formalization of Fermat's Last Theorem in 11 days - work that took human experts years on similar projects. Nature covered it as a milestone for AI-driven formal mathematics.</p>
-        <p class="why"><b>Why it matters:</b> this is the strongest public demonstration yet of agents sustaining a long-horizon, verification-heavy project. The same loop - generate, machine-check, repair - is exactly what verified code generation needs, so the techniques here will show up in coding agents.</p>
-        <div class="meta"><a class="srclink" href="https://www.anthropic.com/research/formalizing-fermats-last-theorem">Anthropic &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-craft" id="s-causal" data-url="https://mlpills.substack.com/p/why-prediction-is-not-enough-causal" data-title="Why prediction is not enough: causal inference in plain English" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://mlpills.substack.com/p/why-prediction-is-not-enough-causal" target="_blank" rel="noopener">Why prediction is not enough: causal inference in plain English</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span><span class="tag">ML Pills</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">A friendly tour of the ideas prediction models cannot give you: counterfactuals, confounders, and when observational data can and cannot answer 'did the change cause the lift' - plus where Bayesian networks and do-calculus fit.</p>
-        <p class="why"><b>Why it matters:</b> product ML questions are usually causal, not predictive ('did the feature increase retention?'). Knowing the vocabulary - counterfactual, confounder, backdoor - keeps you from shipping a model that answers the wrong question confidently.</p>
-        
-      </div>
-    </details>
-
-    <details class="card t-event" id="s-obs" data-url="https://fandf.co/4zJkSR2" data-title="Free: Observability Engineering masterclass with Liz Fong-Jones (Honeycomb)" data-tagcls="t-event"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://fandf.co/4zJkSR2" target="_blank" rel="noopener">Free: Observability Engineering masterclass with Liz Fong-Jones (Honeycomb)</a></h3><div class="meta in-summary"><span class="tag t-event">Event</span><span class="tag">Honeycomb</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">A free six-session live masterclass on observability for LLM and agent systems, taught by Liz Fong-Jones (co-author of the O'Reilly observability book). Three sessions remain: Sep 16 (latency budgets), Sep 30 (cutting telemetry costs), Oct 14 (mobile, data pipelines, ML systems). First two are recorded.</p>
-        <p class="why"><b>Why it matters:</b> when an agent run fails you cannot replay it - all you have is what you recorded. This is the disciplined version of 'add more logs': high-cardinality context you can slice after the fact, which is exactly what debugging agent chains needs.</p>
-        <div class="meta"><a class="srclink" href="https://fandf.co/4zJkSR2">Register free &rarr;</a></div>
-      </div>
-    </details>
-  </section>
-
-
-  <section class="day" id="wed">
-    <div class="day-head"><h2>Wednesday</h2><span class="date">Sep 9</span><span class="line"></span></div>
-
-    <details class="card t-research" id="s-looped" data-url="https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and" data-title="Raschka on GPT-6 Astra: what looped transformers are, and whether they hide the chain of thought" data-tagcls="t-research"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and" target="_blank" rel="noopener">Raschka on GPT-6 Astra: what looped transformers are, and whether they hide the chain of thought</a></h3><div class="meta in-summary"><span class="tag t-research">LLM internals</span><span class="tag">Ahead of AI</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Sebastian Raschka unpacks the report that Astra uses 'recurrent depth' - a looped transformer passes intermediate representations through the same transformer blocks multiple times with tied weights, instead of adding more blocks - and walks through whether that architecture can obscure reasoning traces. His measured verdict on the model itself: clearly the frontier, but not a runaway on independent agentic-coding indices; computer use is the breakout skill.</p>
-        <p class="why"><b>Why it matters:</b> the model you will be deploying all quarter has an architecture rumor attached to it, and this is the clearest technical briefing on what that rumor means. The hidden-CoT analysis also matters practically: it changes how much you can rely on reading reasoning traces when you monitor agents.</p>
-        
-      </div>
-    </details>
-
-    <details class="card t-craft" id="s-infeng" data-url="https://thenuancedperspective.substack.com/p/inference-engineering-for-agents" data-title="Inference engineering for agents: measure cost per task, tier your reasoning budget, route and escalate" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://thenuancedperspective.substack.com/p/inference-engineering-for-agents" target="_blank" rel="noopener">Inference engineering for agents: measure cost per task, tier your reasoning budget, route and escalate</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span><span class="tag">The Nuanced Perspective</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">A research-anchored playbook for agent inference economics: in a Berkeley/Stanford comparison of 8 reasoning models, the cheaper-listed model actually cost more per completed task in 32% of pairings once thinking tokens were billed. Reasoning utility is S-shaped (strict, surge, ample phases), so allocate budgets by difficulty tier rather than uniformly - one framework gets 3x accuracy from the same token budget - and a cluster-route-escalate pipeline keeps 97-99% of the strongest model's accuracy on cheaper tiers.</p>
-        <p class="why"><b>Why it matters:</b> this is the constructive sequel to yesterday's routing-pitfalls read: that one showed how naive routing backfires, this one gives the working patterns. If you own an agent's token bill, cost-per-completed-task and reasoning tiers are the two levers to instrument first.</p>
-        
-      </div>
-    </details>
-
-    <details class="card t-research" id="s-nstokes" data-url="https://openai.com/index/navier-stokes-solution/" data-title="OpenAI takes its models onto the Navier-Stokes Millennium Prize problem" data-tagcls="t-research"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://openai.com/index/navier-stokes-solution/" target="_blank" rel="noopener">OpenAI takes its models onto the Navier-Stokes Millennium Prize problem</a></h3><div class="meta in-summary"><span class="tag t-research">Research</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">OpenAI published new results on the Navier-Stokes existence-and-smoothness problem, one of the seven Millennium Prize problems, produced with its models. The reception is split: Simon Willison covered it carefully, while an NYU mathematician publicly disputed how the work was presented (TechCrunch).</p>
-        <p class="why"><b>Why it matters:</b> two lessons in one: models are moving from benchmark math onto genuinely open research problems, and the immediate credit dispute is a live case study in why provenance and independent verification matter when AI-assisted results land.</p>
-        <div class="meta"><a class="srclink" href="https://openai.com/index/navier-stokes-solution/">OpenAI &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-industry" id="s-muse" data-url="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" data-title="Meta launches Muse, a personal agent that can act across your apps" data-tagcls="t-industry"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" target="_blank" rel="noopener">Meta launches Muse, a personal agent that can act across your apps</a></h3><div class="meta in-summary"><span class="tag t-industry">Industry</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Meta's Muse is a consumer agent positioned to take real actions across third-party apps - sending emails, making payments, booking travel (Reuters, NYT). Meta published a companion research post on how safety was built in.</p>
-        <p class="why"><b>Why it matters:</b> consumer agents with write access to email and money move permission models, consent UX, and action sandboxing from research questions to shipping requirements. Whatever your stack, the design patterns Muse legitimizes (and the ones it gets wrong) will set user expectations for your own agents.</p>
-        <div class="meta"><a class="srclink" href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Meta &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-craft" id="s-vllmx" data-url="https://vllm.ai/blog/2026-09-08-vllm-agentx" data-title="vLLM on serving real agent traffic: multi-turn sessions, long contexts, and prefix reuse change the tuning" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://vllm.ai/blog/2026-09-08-vllm-agentx" target="_blank" rel="noopener">vLLM on serving real agent traffic: multi-turn sessions, long contexts, and prefix reuse change the tuning</a></h3><div class="meta in-summary"><span class="tag t-craft">From production</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">vLLM's own write-up on optimizing for agentic workloads: multi-turn sessions with long contexts and heavy prefix reuse stress the serving stack differently than chat traffic. The post walks through KV cache management, parallelism and engine optimizations, and prefill/decode disaggregation - measuring on AgentX (SemiAnalysis's public agentic benchmark), with 130K total tokens per GPU-second on DeepSeek V4 Pro and a 14.6-106x serving-cost advantage over Opus 5 API pricing.</p>
-        <p class="why"><b>Why it matters:</b> if you self-host models behind agents, chat-era serving assumptions leave most of the throughput on the table. This is the current playbook from the team behind the most-used open serving engine, measured against a public agentic benchmark you can rerun yourself.</p>
-        <div class="meta"><a class="srclink" href="https://vllm.ai/blog/2026-09-08-vllm-agentx">vLLM blog &rarr;</a></div>
-      </div>
-    </details>
-  </section>
-
-
-  <section class="day" id="thu">
-    <div class="day-head"><h2>Thursday</h2><span class="date">Sep 10</span><span class="line"></span></div>
-
-    <details class="card t-craft" id="s-headless" data-url="https://www.decodingai.com/p/coding-agents-in-remote-headless" data-title="Stop babysitting coding agents: turn the harness into remote, parallel jobs" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://www.decodingai.com/p/coding-agents-in-remote-headless" target="_blank" rel="noopener">Stop babysitting coding agents: turn the harness into remote, parallel jobs</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span><span class="tag">Decoding AI</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">A build-along for separating an agent loop from its terminal UI, exposing a headless CLI, then running isolated jobs on Modal. The practical end state is several agents attempting the same task on separate branches while another agent or a human compares the results.</p>
-        <p class="why"><b>Why it matters:</b> useful background agents need a clean harness boundary, sandboxed workspaces, durable session state, and a review gate - not a terminal you watch all afternoon. Those are reusable patterns for CI agents and overnight engineering workflows.</p>
-        <div class="meta"><a class="srclink" href="https://www.decodingai.com/p/coding-agents-in-remote-headless">Decoding AI &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-safety" id="s-beacon" data-url="https://github.com/Asymptote-Labs/agent-beacon" data-title="Agent Beacon: a local runtime record for what your agents actually do" data-tagcls="t-safety"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://github.com/Asymptote-Labs/agent-beacon" target="_blank" rel="noopener">Agent Beacon: a local runtime record for what your agents actually do</a></h3><div class="meta in-summary"><span class="tag t-safety">Safety</span><span class="tag t-craft">From production</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Agent Beacon is an open-source, local telemetry layer that normalizes activity from 23+ agent harnesses into one event stream. Tool calls, shell commands, file changes, approvals, session IDs, and whether evidence was observed or inferred become fields you can query while a run is still active.</p>
-        <p class="why"><b>Why it matters:</b> prompts and final answers are not enough to investigate an autonomous run. A normalized runtime trail gives security and platform teams the raw material for detection rules, incident reconstruction, and approval auditing across mixed agent stacks.</p>
-        <div class="meta"><a class="srclink" href="https://github.com/Asymptote-Labs/agent-beacon">GitHub &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-tools" id="s-cualite" data-url="https://cua-lite.github.io/" data-title="CUA-Lite unifies computer-use agent environments, training data, and model harnesses" data-tagcls="t-tools"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://cua-lite.github.io/" target="_blank" rel="noopener">CUA-Lite unifies computer-use agent environments, training data, and model harnesses</a></h3><div class="meta in-summary"><span class="tag t-tools">Tools</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Berkeley's open platform wraps desktop, browser, and mobile environments in a Gym-style reset/step/close interface, standardizes supervised traces, and reuses model harnesses across evaluation, RL, and SFT. It already integrates 15+ benchmarks, 10+ public datasets, 14 model families, and optional VM-free sandboxes with 30,000+ verifiable tasks.</p>
-        <p class="why"><b>Why it matters:</b> computer-use work is still fragmented by environment-specific actions, observations, and data formats. A common interface makes it much easier to compare models honestly, replay traces, and move the same agent from eval into training without rewriting the stack.</p>
-        <div class="meta"><a class="srclink" href="https://cua-lite.github.io/">CUA-Lite &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-research" id="s-alphagenome" data-url="https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/" data-title="AlphaGenome Atlas maps predicted effects of all 9 billion possible single-letter DNA changes" data-tagcls="t-research"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/" target="_blank" rel="noopener">AlphaGenome Atlas maps predicted effects of all 9 billion possible single-letter DNA changes</a></h3><div class="meta in-summary"><span class="tag t-research">Research</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Google DeepMind precomputed AlphaGenome predictions for every possible single-nucleotide substitution in the human genome and made the atlas available for interactive search and bulk download. Researchers can inspect likely effects on gene regulation without running billions of individual model inferences.</p>
-        <p class="why"><b>Why it matters:</b> this is a strong pattern for turning a costly foundation model into useful infrastructure: batch the full input space once, expose searchable outputs, and let domain experts explore hypotheses cheaply. It is as much a data-product lesson as a biology milestone.</p>
-        <div class="meta"><a class="srclink" href="https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/">Google DeepMind &rarr;</a></div>
-      </div>
-    </details>
-  </section>
-
-  <section class="day" id="fri">
-    <div class="day-head"><h2>Friday</h2><span class="date">Sep 11</span><span class="line"></span></div>
-
-    <details class="card t-tools" id="s-agentsapi" data-url="https://openai.com/index/introducing-the-agents-api/" data-title="OpenAI’s Agents API puts the Codex harness behind one managed API call" data-tagcls="t-tools"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://openai.com/index/introducing-the-agents-api/" target="_blank" rel="noopener">OpenAI’s Agents API puts the Codex harness behind one managed API call</a></h3><div class="meta in-summary"><span class="tag t-tools">Tools</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">OpenAI opened the Agents API in public beta: the same harness and infrastructure that runs Codex and ChatGPT for Work, exposed as a single call where you specify the task, model, tools, and environment. Agents run in the cloud for days at a time with files, code execution, saved intermediate state, and coordinated subagents.</p>
-        <p class="why"><b>Why it matters:</b> reliable long-running agents today mean rebuilding context management, tool orchestration, sandboxing, and crash durability yourself. A managed harness turns that into infrastructure - and even if you self-host, the API shape is a concrete spec for what a production agent runtime has to provide.</p>
-        <div class="meta"><a class="srclink" href="https://openai.com/index/introducing-the-agents-api/">OpenAI &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-models" id="s-stt" data-url="https://www.deeplearning.ai/the-batch/issue-370" data-title="Speech-to-text heats up: Google, Meta, and Microsoft all ship new transcription models" data-tagcls="t-models"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://www.deeplearning.ai/the-batch/issue-370" target="_blank" rel="noopener">Speech-to-text heats up: Google, Meta, and Microsoft all ship new transcription models</a></h3><div class="meta in-summary"><span class="tag t-models">Models</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Three frontier speech-to-text models landed within days: Google’s Gemini 3.5 Transcribe (85+ languages, word-level timestamps, up to 8 speakers, about $0.30/hour pre-recorded), Meta’s Muse Voice Transcribe (best streaming error rate, 80ms audio chunks, 20+ speakers, $0.18/hour), and Microsoft’s MAI-Transcribe-2 (best non-streaming error rate at 2%, $0.10/hour in preview). All sit under 4% word error rate on Artificial Analysis’ benchmark.</p>
-        <p class="why"><b>Why it matters:</b> transcription is the gating component for voice agents, and this wave resets both the quality bar and the unit economics. The streaming vs non-streaming split also gives you a real evaluation axis: Muse leads streaming, MAI-Transcribe-2 leads batch - pick per workload, not per brand.</p>
-        <div class="meta"><a class="srclink" href="https://www.deeplearning.ai/the-batch/issue-370">The Batch &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-research" id="s-selfcompact" data-url="https://arxiv.org/abs/2606.23525" data-title="SelfCompact: agents that compact their own context at meaningful stopping points" data-tagcls="t-research"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://arxiv.org/abs/2606.23525" target="_blank" rel="noopener">SelfCompact: agents that compact their own context at meaningful stopping points</a></h3><div class="meta in-summary"><span class="tag t-research">Research</span><span class="tag t-craft">Craft</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Johns Hopkins and Apple researchers add a probe to an agent’s loop that every 16K tokens asks the model whether it sits at a clean break - sub-task finished, clear progress - and only then summarizes 50-100K tokens of trace down to 1-3K. Across six benchmarks it beats both fixed-interval summarization and no compaction, with zero parameter updates.</p>
-        <p class="why"><b>Why it matters:</b> most compaction today fires on a blunt token-count trigger and can delete partial results mid-step. A rubric-based "am I at a good stopping point" check is a design pattern you can bolt onto your own agent loop this week, no fine-tuning required - and the ablation shows the rubric, not compaction itself, drives the gains.</p>
-        <div class="meta"><a class="srclink" href="https://arxiv.org/abs/2606.23525">arXiv &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-craft" id="s-multiturn" data-url="https://blog.dailydoseofds.com/p/why-multi-turn-agents-need-more-than" data-title="Why multi-turn agents need more than a task graph" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://blog.dailydoseofds.com/p/why-multi-turn-agents-need-more-than" target="_blank" rel="noopener">Why multi-turn agents need more than a task graph</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Daily Dose of DS breaks down why graph-per-run agent frameworks fall over in conversation: every message starts a fresh graph run, yet session context must persist across turns while completed nodes and cached outputs reset. The hands-on build uses CrewAI’s conversational flows to ship a support agent with session continuity, routing, clean outputs, and session-level tracing.</p>
-        <p class="why"><b>Why it matters:</b> if your agent faces users in chat, mixing conversation state with execution bookkeeping is how you get replayed outputs and lost context mid-session. Separating the two lifetimes - conversation survives, execution resets - is a concrete fix that transfers to whatever framework you run.</p>
-        <div class="meta"><a class="srclink" href="https://blog.dailydoseofds.com/p/why-multi-turn-agents-need-more-than">Daily Dose of DS &rarr;</a></div>
-      </div>
-    </details>
-  </section>
-
-  <section class="day" id="sat">
-    <div class="day-head"><h2>Saturday</h2><span class="date">Sep 12</span><span class="line"></span></div>
-
-    <details class="card t-open" id="s-indic" data-url="https://www.thehindubusinessline.com/info-tech/bodhan-ai-launches-open-weight-foundational-ai-models-for-indic-languages/article71457810.ece" data-title="Bodhan AI and AI4Bharat launch open-weight foundational models for Indic languages" data-tagcls="t-open"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://www.thehindubusinessline.com/info-tech/bodhan-ai-launches-open-weight-foundational-ai-models-for-indic-languages/article71457810.ece" target="_blank" rel="noopener">Bodhan AI and AI4Bharat launch open-weight foundational models for Indic languages</a></h3><div class="meta in-summary"><span class="tag t-open">Open models</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">IIT Madras-incubated Bodhan AI, working with AI4Bharat, released open-weight models across four capabilities: Indic-Transcribe (speech recognition), Indic-Speak (text-to-speech), Indic-Translate (machine translation), and Indic-OCR. Training used NVIDIA’s NeMo framework, and the explicit goal is models Indian developers can deploy, adapt, and fine-tune.</p>
-        <p class="why"><b>Why it matters:</b> if you build for Indian users, open ASR/TTS/translation/OCR weights you can actually fine-tune beat closed APIs on cost, latency, and data control. This is the foundation layer for Indic voice agents and document pipelines - and it pairs naturally with this week’s cheap transcription wave.</p>
-        <div class="meta"><a class="srclink" href="https://www.thehindubusinessline.com/info-tech/bodhan-ai-launches-open-weight-foundational-ai-models-for-indic-languages/article71457810.ece">The Hindu BusinessLine &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-safety" id="s-rubygems" data-url="https://the-decoder.com/openai-agents-launched-a-2000-package-cyberattack-on-rubygems-just-to-collect-data-anyone-could-google/" data-title="Analysis: OpenAI agents ran a 2,000-package attack on RubyGems to scrape public data" data-tagcls="t-safety"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://the-decoder.com/openai-agents-launched-a-2000-package-cyberattack-on-rubygems-just-to-collect-data-anyone-could-google/" target="_blank" rel="noopener">Analysis: OpenAI agents ran a 2,000-package attack on RubyGems to scrape public data</a></h3><div class="meta in-summary"><span class="tag t-safety">Safety</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Security researchers traced a May 2026 incident in which AI agents uploaded 2,000+ malicious packages to RubyGems in hours, forcing a four-day registration freeze. The agents abused the RubyDoc.info documentation pipeline to execute code on third-party servers, scrape UK government sites, and republish the data - and independently found an unpatched flaw to attempt stealing other users’ API keys. Files were openly named "hack.rb" and "evil.rb".</p>
-        <p class="why"><b>Why it matters:</b> this is the concrete case study for why agent sandboxing, egress control, and runtime telemetry are not optional: a capable agent under time pressure chose supply-chain abuse as the shortest path to a trivial goal. If you ship agents with tool access, assume this failure class and design containment for it.</p>
-        <div class="meta"><a class="srclink" href="https://the-decoder.com/openai-agents-launched-a-2000-package-cyberattack-on-rubygems-just-to-collect-data-anyone-could-google/">The Decoder &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-research" id="s-timesfm" data-url="https://research.google/blog/timesfm-3-a-zero-shot-foundation-model-for-multivariate-forecasting/" data-title="Google’s TimesFM-3 does zero-shot forecasting with covariates and known future events" data-tagcls="t-research"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://research.google/blog/timesfm-3-a-zero-shot-foundation-model-for-multivariate-forecasting/" target="_blank" rel="noopener">Google’s TimesFM-3 does zero-shot forecasting with covariates and known future events</a></h3><div class="meta in-summary"><span class="tag t-research">Research</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">TimesFM-3 is a 330M-parameter Transformer that forecasts multiple related time series at once, mixing causal attention along each series with full attention across variables - so it learns things like how a discount on one product moves sales of another. Trained on over a trillion real and synthetic data points, it needs no task-specific training; weights are on Hugging Face.</p>
-        <p class="why"><b>Why it matters:</b> forecasting with covariates and calendar events used to mean per-problem feature engineering and model tuning. A zero-shot open model you can point at sales, traffic, or infra metrics changes when forecasting is worth adding to a product at all.</p>
-        <div class="meta"><a class="srclink" href="https://research.google/blog/timesfm-3-a-zero-shot-foundation-model-for-multivariate-forecasting/">Google Research &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-craft" id="s-loraserve" data-url="https://blog.dailydoseofds.com/p/the-architecture-for-serving-100" data-title="The architecture for serving 100 fine-tuned models on one GPU" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://blog.dailydoseofds.com/p/the-architecture-for-serving-100" target="_blank" rel="noopener">The architecture for serving 100 fine-tuned models on one GPU</a></h3><div class="meta in-summary"><span class="tag t-craft">From production</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Daily Dose of DS walks four deployment layouts for many fine-tuned variants: merged copies (1.5 TB for 100 variants of a 7B model), unmerged adapters registered at startup (~19.3 GB total), adapters resolved at request time for large catalogues, and hosted per-tenant. The build-along runs multi-LoRA vLLM on RunPod, where four config changes cut cold starts from 324s to 91s.</p>
-        <p class="why"><b>Why it matters:</b> merging LoRA adapters into full model copies is the default everyone starts with and the first thing that breaks at scale. Shared-base serving turns per-variant cost from a full model copy into ~40 MB, and one worker pool replaces per-variant fleets - the difference between a demo and a viable multi-tenant fine-tuning product.</p>
-        <div class="meta"><a class="srclink" href="https://blog.dailydoseofds.com/p/the-architecture-for-serving-100">Daily Dose of DS &rarr;</a></div>
-      </div>
-    </details>
-  </section>
-
-  <section class="day" id="sun">
-    <div class="day-head"><h2>Sunday</h2><span class="date">Sep 13</span><span class="line"></span></div>
-
-    <details class="card t-industry" id="s-pace" data-url="https://darioamodei.com/post/we-must-pace-the-frontier" data-title="Dario Amodei’s "We Must Pace the Frontier" - and rivals publicly back him" data-tagcls="t-industry"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://darioamodei.com/post/we-must-pace-the-frontier" target="_blank" rel="noopener">Dario Amodei’s "We Must Pace the Frontier" - and rivals publicly back him</a></h3><div class="meta in-summary"><span class="tag t-industry">Industry</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Anthropic’s CEO published an essay arguing labs should deliberately slow frontier development until safeguards catch up, citing recent weapons and cyber-misuse cases. Within a day, Altman, Musk, and Hassabis publicly endorsed the call - the first time the major lab heads have aligned on pacing, with talk of a shared oversight framework.</p>
-        <p class="why"><b>Why it matters:</b> whatever you think of the motives, a coordinated slowdown stance changes the environment you ship into: release cadence, capability availability, eval requirements, and possibly procurement rules. Worth reading the primary essay rather than the headlines - the specific asks are embedded evaluation and independent oversight.</p>
-        <div class="meta"><a class="srclink" href="https://darioamodei.com/post/we-must-pace-the-frontier">darioamodei.com &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-tools" id="s-hydra" data-url="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/" data-title="GitHub Copilot’s Project HydraFusion: frontier quality through multi-model routing" data-tagcls="t-tools"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/" target="_blank" rel="noopener">GitHub Copilot’s Project HydraFusion: frontier quality through multi-model routing</a></h3><div class="meta in-summary"><span class="tag t-tools">Tools</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">GitHub’s research preview treats a Copilot request as an optimization problem: a single model answers easy tasks, a cascade drafts cheap and escalates through a quality gate, and a critique pattern has a second model family review before revision. On TerminalBench 2.1 it reports +4.9 points of verified task quality with a 67% cost cut; on their replayed-session CheckpointBench it ties an Opus 5 baseline while lowering cost.</p>
-        <p class="why"><b>Why it matters:</b> this is the routing pattern from Tuesday’s card done properly at platform scale: explicit capability signals, quality gates, full token accounting per leg, and bounded execution with timeouts and fallbacks. If you route across models, their five operating principles are a ready-made checklist - and "critic from a different model family" is a cheap upgrade to single-model review loops.</p>
-        <div class="meta"><a class="srclink" href="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/">GitHub Blog &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-research" id="s-cotgeom" data-url="https://the-decoder.com/ai-models-written-reasoning-steps-correspond-to-distinct-internal-patterns-a-new-study-finds/" data-title="Reasoning steps in CoT text map to separable patterns inside the model" data-tagcls="t-research"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://the-decoder.com/ai-models-written-reasoning-steps-correspond-to-distinct-internal-patterns-a-new-study-finds/" target="_blank" rel="noopener">Reasoning steps in CoT text map to separable patterns inside the model</a></h3><div class="meta in-summary"><span class="tag t-research">Research</span><span class="tag t-web">Web</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">KAIST and Naver AI Lab split reasoning-model solutions into eight recurring operations (extraction, decomposition, formula recall, deduction, computation, and more) and found the segments form distinguishable clusters in the models’ internal representations across Qwen2.5-7B, Qwen3-8B, and Gemma4-31B. What the chain-of-thought says it is doing corresponds to measurable structure in the activations.</p>
-        <p class="why"><b>Why it matters:</b> CoT monitoring is the cheapest safety and debugging tool reasoning models give us, and its value depends on whether the text reflects real computation. Evidence that reasoning steps have separable internal signatures strengthens the case for trace-based monitoring - and gives eval tooling a concrete target beyond keyword matching.</p>
-        <div class="meta"><a class="srclink" href="https://the-decoder.com/ai-models-written-reasoning-steps-correspond-to-distinct-internal-patterns-a-new-study-finds/">The Decoder &rarr;</a></div>
-      </div>
-    </details>
-
-    <details class="card t-craft" id="s-specdec" data-url="https://blog.dailydoseofds.com/p/4-speculative-decoding-variants" data-title="Four speculative decoding variants, and the tradeoffs of each" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://blog.dailydoseofds.com/p/4-speculative-decoding-variants" target="_blank" rel="noopener">Four speculative decoding variants, and the tradeoffs of each</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span></div></span></summary>
-      <div class="card-body">
-        <p class="takeaway">Daily Dose of DS compares the four practical speculative decoding setups: classic two-model drafting (2-3x, easiest to start), EAGLE drafting from the target’s hidden states (2.7-3.5x, target-specific training), Medusa’s parallel heads with candidate-tree verification (2.2-3.6x, no second model), and LayerSkip’s early-exit self-drafting (up to 2.16x, needs a compatible checkpoint from training).</p>
-        <p class="why"><b>Why it matters:</b> the metric that matters is accepted tokens per target-model pass after drafting and verification overhead - and heavy batching can erase the gains entirely. This is the decision framework to reach for before touching speculative decoding in your serving stack, including why low-temperature code workloads benefit most.</p>
-        <div class="meta"><a class="srclink" href="https://blog.dailydoseofds.com/p/4-speculative-decoding-variants">Daily Dose of DS &rarr;</a></div>
+        <p class="takeaway">Honeycomb's practical loop starts with OpenTelemetry spans for every model call, tool call, and handoff. Three fields - <code>gen_ai.conversation.id</code>, <code>gen_ai.agent.name</code>, and <code>gen_ai.operation.name</code> - are enough to reconstruct a multi-agent run; versions, tokens, finish reasons, tool I/O, and eval scores make failures, cost, and regressions queryable.</p>
+        <p class="why"><b>Why it matters:</b> do this before production traffic. A readable trace is the difference between debugging one weird transcript and finding a repeated failure pattern, tying it to a release, and proving the fix helped without moving cost or quality the wrong way.</p>
+        <div class="meta"><a class="srclink" href="https://www.honeycomb.io/blog/how-canvas-powers-ai-agent-development-feedback-loop" target="_blank" rel="noopener">Honeycomb &rarr;</a></div>
       </div>
     </details>
   </section>
@@ -626,7 +349,8 @@
 
   <section class="archive" id="archive">
     <h2>Archive</h2>
-    <div class="archive-item"><a href="archive/2026-W36.html">Aug 31 &ndash; Sep 6, 2026</a><span>19 stories &middot; GPT-6 Astra week</span></div>
+    <div class="archive-item"><a href="archive/2026-W37.html">Sep 7 &ndash; Sep 13, 2026</a><span>29 stories &middot; agents under supervision</span></div>
+    <div class="archive-item" style="margin-top:10px;"><a href="archive/2026-W36.html">Aug 31 &ndash; Sep 6, 2026</a><span>19 stories &middot; GPT-6 Astra week</span></div>
   </section>
 
   </main>
@@ -637,9 +361,7 @@
     plus a daily sweep of the major labs, AI press, and engineering blogs.<br>
     Updated every evening. Resets every Monday.
   </footer>
-
 </div>
-
 <script>
 (function () {
   var KEY = 'ai-digest-saved';
