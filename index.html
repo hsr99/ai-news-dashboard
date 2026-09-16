@@ -277,7 +277,7 @@
   <div class="layout">
   <aside class="side">
   <div class="scan">
-    <div class="scan-head"><h2>The 30-second version</h2><span>8 stories, zero scrolling</span></div>
+    <div class="scan-head"><h2>The 30-second version</h2><span>12 stories, zero scrolling</span></div>
     <div class="scan-day">
       <div class="sd">Mon 14</div>
       <div class="scan-line t-safety"><span class="bullet"></span><a href="#s-threat26"><b>AI cyber threat shift:</b> <span class="rest">autonomous exploit foundries and stolen AI keys are already operating at campaign scale.</span></a></div>
@@ -291,6 +291,13 @@
       <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-grabkit"><b>Grab's production wrapper:</b> <span class="rest">500 agent services, 50 MCP servers, and deployment cut from two weeks to an hour.</span></a></div>
       <div class="scan-line t-research"><span class="bullet"></span><a href="#s-shadowpeft"><b>ShadowPEFT:</b> <span class="rest">a tiny persistent model becomes the adapter instead of injecting low-rank weight deltas.</span></a></div>
       <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-hans"><b>5B-token reality check:</b> <span class="rest">a business agent earned $1.54; environment design mattered more than model upgrades.</span></a></div>
+    </div>
+    <div class="scan-day">
+      <div class="sd">Wed 16</div>
+      <div class="scan-line t-models"><span class="bullet"></span><a href="#s-gemlive"><b>Gemini 3.8 Live:</b> <span class="rest">voice agents get parallel thinking, asynchronous tools, and 68.6% on the tau-Voice benchmark.</span></a></div>
+      <div class="scan-line t-research"><span class="bullet"></span><a href="#s-passk"><b>77% is not reliable:</b> <span class="rest">IBM's Pass^5 exposes agents that succeed on average but fail repeat runs.</span></a></div>
+      <div class="scan-line t-tools"><span class="bullet"></span><a href="#s-reef"><b>Reef:</b> <span class="rest">turn live inference traces into evaluated, versioned model and harness updates.</span></a></div>
+      <div class="scan-line t-industry"><span class="bullet"></span><a href="#s-openfrontier"><b>Route by task horizon:</b> <span class="rest">open models are ~4 months behind and up to 5x cheaper per completed task.</span></a></div>
     </div>
   </div>
   </aside>
@@ -309,6 +316,7 @@
   <nav class="daynav">
     <a href="#mon">Mon 14</a>
     <a href="#tue">Tue 15</a>
+    <a href="#wed">Wed 16</a>
     <a href="#saved" id="nav-saved">Saved</a>
     <a href="#archive">Archive</a>
   </nav>
@@ -381,6 +389,42 @@
         <p class="takeaway">DFDX gave a long-running agent a computer, a small budget, and the goal of making money. After roughly 5B tokens and three weeks it had built infrastructure and attempted businesses, but earned only $1.54; the team's strongest lesson was that better environment feedback and clearer success signals mattered more than swapping in a stronger model.</p>
         <p class="why"><b>Why it matters:</b> autonomy without a measurable objective becomes expensive motion. Before upgrading the model, instrument the environment, shorten the feedback loop, make progress machine-checkable, and price the entire trajectory against the value produced.</p>
         <div class="meta"><a class="srclink" href="https://dfdxlabs.com/research/2026/hans-kraemer/" target="_blank" rel="noopener">DFDX Labs &rarr;</a></div>
+      </div>
+    </details>
+  </section>
+
+  <section class="day" id="wed">
+    <div class="day-head"><h2>Wednesday</h2><span class="date">Sep 16</span><span class="line"></span></div>
+
+    <details class="card t-models" id="s-gemlive" data-url="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/" data-title="Gemini 3.8 Live brings parallel thinking and asynchronous tools to voice agents" data-tagcls="t-models"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/" target="_blank" rel="noopener">Gemini 3.8 Live brings parallel thinking and asynchronous tools to voice agents</a></h3><div class="meta in-summary"><span class="tag t-models">Models</span><span class="tag t-agents">Agents</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">Google released fast and extended-thinking Gemini 3.8 Live models for real-time audio, vision, and tool use. Extended Thinking can reason in parallel while the conversation continues; both models can run tools asynchronously, and Google reports 68.6% on tau-Voice plus 35.1% on the banking variant.</p>
+        <p class="why"><b>Why it matters:</b> voice-agent architecture no longer has to freeze the dialogue while the agent thinks or calls a tool. Separate the conversational fast path from background reasoning, make tool completion interruptible, and evaluate task completion alongside naturalness and latency.</p>
+        <div class="meta"><a class="srclink" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/" target="_blank" rel="noopener">Google &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-research" id="s-passk" data-url="https://huggingface.co/blog/ibm-research/altk-evolve-consistency" data-title="Your agent passed once. IBM's Pass^k asks whether it will pass again" data-tagcls="t-research"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://huggingface.co/blog/ibm-research/altk-evolve-consistency" target="_blank" rel="noopener">Your agent passed once. IBM's Pass^k asks whether it will pass again</a></h3><div class="meta in-summary"><span class="tag t-research">Research</span><span class="tag t-craft">Craft</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">On AppWorld, a GPT-4.1 ReAct agent averaged 77.4% across five runs but passed all five runs on only 53% of tasks. IBM's Consistency Analyzer resamples each recorded decision point without replaying tools or needing ground truth; guidelines from the unstable steps raised Pass^5 to 69% while average accuracy also improved.</p>
+        <p class="why"><b>Why it matters:</b> report Pass^k beside Mean@k. An agent can be capable and still unreliable, even at temperature zero; use trace-level resampling to find flat decisions before a demo or production workflow finds them for you.</p>
+        <div class="meta"><a class="srclink" href="https://huggingface.co/blog/ibm-research/altk-evolve-consistency" target="_blank" rel="noopener">IBM Research on Hugging Face &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-tools" id="s-reef" data-url="https://huggingface.co/blog/quao627/your-inference-server-is-secretly-a-learner-reef" data-title="Reef turns live agent traffic into controlled model and harness updates" data-tagcls="t-tools"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://huggingface.co/blog/quao627/your-inference-server-is-secretly-a-learner-reef" target="_blank" rel="noopener">Reef turns live agent traffic into controlled model and harness updates</a></h3><div class="meta in-summary"><span class="tag t-tools">Tools</span><span class="tag t-open">Open source</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">Reef is an open-source inference layer that stores traces and feedback as a structured experience stream, then updates model weights and harness components such as prompts, memory, skills, and routing. Candidate artifacts are evaluated and versioned before promotion; approved weights hot-swap into serving, while compare-and-swap prevents stale releases from overwriting newer ones.</p>
+        <p class="why"><b>Why it matters:</b> learning from production needs release engineering, not an unguarded self-edit loop. Keep immutable experience records, train asynchronously, evaluate candidates off the serving path, and make every accepted model or harness change auditable and reversible.</p>
+        <div class="meta"><a class="srclink" href="https://huggingface.co/blog/quao627/your-inference-server-is-secretly-a-learner-reef" target="_blank" rel="noopener">Hugging Face &rarr;</a></div>
+      </div>
+    </details>
+
+    <details class="card t-industry" id="s-openfrontier" data-url="https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/" data-title="Pay for the frontier by workload, not by default" data-tagcls="t-industry"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/" target="_blank" rel="noopener">Pay for the frontier by workload, not by default</a></h3><div class="meta in-summary"><span class="tag t-industry">Industry</span><span class="tag t-craft">Craft</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body">
+        <p class="takeaway">Mozilla's latest analysis puts the best open-weight models about 4.4 months behind the closed frontier. On a neutral Terminal-Bench harness, GLM 5.2 landed within a point of Claude Opus 4.7/4.8 at about one-fifth the cost per completed task; the paid frontier's clearest edge was on roughly 8-12-hour expert tasks.</p>
+        <p class="why"><b>Why it matters:</b> route by verified task horizon and cost per completed task, not brand. Default routine work to the cheaper open tier, escalate the few tasks that cross its reliability boundary, and benchmark every model under the same harness.</p>
+        <div class="meta"><a class="srclink" href="https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/" target="_blank" rel="noopener">Ars Technica &rarr;</a></div>
       </div>
     </details>
   </section>
