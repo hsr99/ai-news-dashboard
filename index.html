@@ -277,7 +277,7 @@
   <div class="layout">
   <aside class="side">
   <div class="scan">
-    <div class="scan-head"><h2>The 30-second version</h2><span>20 stories, zero scrolling</span></div>
+    <div class="scan-head"><h2>The 30-second version</h2><span>24 stories, zero scrolling</span></div>
     <div class="scan-day">
       <div class="sd">Mon 14</div>
       <div class="scan-line t-safety"><span class="bullet"></span><a href="#s-threat26"><b>AI cyber threat shift:</b> <span class="rest">autonomous exploit foundries and stolen AI keys are already operating at campaign scale.</span></a></div>
@@ -313,6 +313,13 @@
       <div class="scan-line t-safety"><span class="bullet"></span><a href="#s-watermarkdrift"><b>Watermarks change behavior:</b> <span class="rest">SynthID sampling altered refusals and tool calls under adversarial prompts.</span></a></div>
       <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-regdetect"><b>Catch serving regressions:</b> <span class="rest">compare upstream and production builds across hardware, then measure distribution shift.</span></a></div>
     </div>
+    <div class="scan-day">
+      <div class="sd">Sat 19</div>
+      <div class="scan-line t-agents"><span class="bullet"></span><a href="#s-mcpskills"><b>Skip the extra reasoner:</b> <span class="rest">bounded specialist agents can become on-demand instructions plus direct MCP tools.</span></a></div>
+      <div class="scan-line t-models"><span class="bullet"></span><a href="#s-cuas1"><b>706k params for form filling:</b> <span class="rest">score typed options in one pass instead of asking a generative model to drive every field.</span></a></div>
+      <div class="scan-line t-craft"><span class="bullet"></span><a href="#s-softfactory"><b>Build a software factory gradually:</b> <span class="rest">humans plan, agents implement and test, production signals feed the next task.</span></a></div>
+      <div class="scan-line t-tools"><span class="bullet"></span><a href="#s-wso2mgr"><b>Govern the agent fleet:</b> <span class="rest">separate identity, policy, sandboxing, tracing, and lifecycle from agent logic.</span></a></div>
+    </div>
   </div>
   </aside>
 
@@ -333,6 +340,7 @@
     <a href="#wed">Wed 16</a>
     <a href="#thu">Thu 17</a>
     <a href="#fri">Fri 18</a>
+    <a href="#sat">Sat 19</a>
     <a href="#saved" id="nav-saved">Saved</a>
     <a href="#archive">Archive</a>
   </nav>
@@ -514,6 +522,26 @@
         <p class="why"><b>Why it matters:</b> container, dependency, kernel, and hardware changes can pass functional tests while silently hurting inference. Store an upstream baseline per hardware target, test release candidates at several concurrency levels, and use distribution shift as a second opinion before blocking a release.</p>
         <div class="meta"><a class="srclink" href="https://developers.redhat.com/articles/2026/09/17/catching-poor-llm-performance-and-accuracy-before-deployment" target="_blank" rel="noopener">Red Hat Developer &rarr;</a></div>
       </div>
+    </details>
+  </section>
+
+  <section class="day" id="sat">
+    <div class="day-head"><h2>Saturday</h2><span class="date">Sep 19</span><span class="line"></span></div>
+
+    <details class="card t-agents" id="s-mcpskills" data-url="https://devblogs.microsoft.com/agent-framework/from-specialist-agents-to-distributed-skills-over-mcp/" data-title="Microsoft replaces bounded specialist agents with distributed skills and MCP tools" data-tagcls="t-agents"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://devblogs.microsoft.com/agent-framework/from-specialist-agents-to-distributed-skills-over-mcp/" target="_blank" rel="noopener">Microsoft replaces bounded specialist agents with distributed skills and MCP tools</a></h3><div class="meta in-summary"><span class="tag t-agents">Agents</span><span class="tag t-craft">Craft</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body"><p class="takeaway">Microsoft moved the instructions of bounded weather and lift specialists into on-demand skills while keeping their operations behind remote MCP services. One advisor then reasoned and called the tools directly: three model calls per run instead of six or seven nested across A2A agents, with lower observed wall time in the demo.</p><p class="why"><b>Why it matters:</b> keep a remote agent when it needs autonomy, a specialized model, or a long-running loop; turn a bounded competence into instructions plus typed tools. Measure the tradeoff on your workload: the skills path used about 22% more observed tokens, caching differed, and the two paths did not perform identical work.</p><div class="meta"><a class="srclink" href="https://devblogs.microsoft.com/agent-framework/from-specialist-agents-to-distributed-skills-over-mcp/" target="_blank" rel="noopener">Microsoft &rarr;</a></div></div>
+    </details>
+
+    <details class="card t-models" id="s-cuas1" data-url="https://huggingface.co/cua-ai/cua-s1-forms" data-title="CUA-S1-FORMS uses 706k parameters to make bounded GUI decisions" data-tagcls="t-models"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://huggingface.co/cua-ai/cua-s1-forms" target="_blank" rel="noopener">CUA-S1-FORMS uses 706k parameters to make bounded GUI decisions</a></h3><div class="meta in-summary"><span class="tag t-models">Models</span><span class="tag t-open">Open</span><span class="tag t-craft">Craft</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body"><p class="takeaway">Cua open-sourced a 2.8 MB, 706,048-parameter encoder that scores typed options for each form element in one forward pass. It does not generate text: supplied document entities plus check, click, and skip are scored in parallel, while deterministic downstream code orders fills, checkboxes, and an authorized submit.</p><p class="why"><b>Why it matters:</b> use a large model to reduce an open problem to a bounded choice, then hand repeated decisions to a tiny local scorer. The disclosed results are promising, but the model trained on synthetic forms and its real evaluation covers only 196 decisions, so treat the 100% demo score as an early checkpoint, not broad validation.</p><div class="meta"><a class="srclink" href="https://huggingface.co/cua-ai/cua-s1-forms" target="_blank" rel="noopener">Hugging Face &rarr;</a></div></div>
+    </details>
+
+    <details class="card t-craft" id="s-softfactory" data-url="https://www.decodingai.com/cp/216416085" data-title="A practical software factory puts humans at planning and release gates" data-tagcls="t-craft"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://www.decodingai.com/cp/216416085" target="_blank" rel="noopener">A practical software factory puts humans at planning and release gates</a></h3><div class="meta in-summary"><span class="tag t-craft">Craft</span><span class="tag t-agents">Agents</span></div></span></summary>
+      <div class="card-body"><p class="takeaway">After an overbuilt first attempt, Decoding AI's Paul Iusztin converged on a staged loop: intake, brainstorm, human-led planning, implementation, independent QA, requirement and code review, CI, release, then production signals back into intake. Shared context and architecture decisions make cheaper executors effective; missing test plumbing is often the real failure.</p><p class="why"><b>Why it matters:</b> automate one painful bottleneck first and preserve granular commands to halt or redirect work. Put taste and high-leverage decisions in planning, give implementers reproducible access to the app, separate the model that writes code from the one grading it, and earn end-to-end autonomy instead of starting with an opaque monolith.</p><div class="meta"><a class="srclink" href="https://www.decodingai.com/cp/216416085" target="_blank" rel="noopener">Decoding AI / O'Reilly &rarr;</a></div></div>
+    </details>
+
+    <details class="card t-tools" id="s-wso2mgr" data-url="https://www.infoq.com/news/2026/09/ws02-agent-manager/" data-title="WSO2 makes agent governance a framework-independent control plane" data-tagcls="t-tools"><summary><button class="bm" aria-label="Save for later" title="Save for later"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg></button><span class="chev">&rsaquo;</span><span class="sum-main"><h3><a href="https://www.infoq.com/news/2026/09/ws02-agent-manager/" target="_blank" rel="noopener">WSO2 makes agent governance a framework-independent control plane</a></h3><div class="meta in-summary"><span class="tag t-tools">Tools</span><span class="tag t-safety">Safety</span><span class="tag t-web">Web</span></div></span></summary>
+      <div class="card-body"><p class="takeaway">WSO2 Agent Manager is now generally available as an open-source control plane above models and frameworks. It centralizes verifiable machine identity, delegated authorization and revocation, MCP and LLM policies, Kubernetes sandboxing, OpenTelemetry traces, evaluations, and dev-to-production lifecycle controls.</p><p class="why"><b>Why it matters:</b> as agent counts grow, keep identity, authority, policy, isolation, observability, and shutdown controls independent from agent logic so a framework swap does not rebuild governance. This is a product release, not an independent effectiveness benchmark, but the control-plane checklist is useful for reviewing any agent platform.</p><div class="meta"><a class="srclink" href="https://www.infoq.com/news/2026/09/ws02-agent-manager/" target="_blank" rel="noopener">InfoQ &rarr;</a></div></div>
     </details>
   </section>
 
