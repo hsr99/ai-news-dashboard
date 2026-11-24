@@ -277,7 +277,7 @@ section.day[hidden] { display: none !important; }
 <div class="layout"><aside class="side"><div class="scan">
 <div class="scan-head">
 <h2>The 30-second version</h2>
-<span>5 stories, zero scrolling</span>
+<span>10 stories, zero scrolling</span>
 </div>
 <div class="scan-day">
 <div class="sd">Mon 23</div>
@@ -309,6 +309,39 @@ section.day[hidden] { display: none !important; }
 <span class="bullet"></span>
 <a href="#s-vllm-nvme-kv">
 <b>vLLM shows NVMe can replace the DRAM KV tier.</b> <span class="rest">A 1.8TB NVMe pool matched same-size DRAM within 1% at 48-96 sessions by retaining agent prefixes longer; heavy-read and model-shape caveats remain.</span>
+</a>
+</div>
+</div>
+<div class="scan-day">
+<div class="sd">Tue 24</div>
+<div class="scan-line t-agents">
+<span class="bullet"></span>
+<a href="#s-claude-ship">
+<b>Claude Ship can review, fix and approve PRs under repo policy.</b> <span class="rest">Code Review is GA, while PR Steward and policy-based Claude Approvals are beta for Team and Enterprise GitHub repos.</span>
+</a>
+</div>
+<div class="scan-line t-industry">
+<span class="bullet"></span>
+<a href="#s-openai-cisco-shirudo">
+<b>OpenAI and Cisco open-source Shirudo for live Linux shields.</b> <span class="rest">The eBPF runtime can test and deploy signed temporary shields without restarting a service, with TPM-backed records of what loaded.</span>
+</a>
+</div>
+<div class="scan-line t-agents">
+<span class="bullet"></span>
+<a href="#s-medical-decision-models">
+<b>John Snow Labs ships medical decision models for private deployment.</b> <span class="rest">Medical DM Small and Nano return typed clinical judgments; vendor claims 0.917 and 0.901 composite scores, 40ms and 24ms per note, plus CPU PHI screening.</span>
+</a>
+</div>
+<div class="scan-line t-agents">
+<span class="bullet"></span>
+<a href="#s-gemini-file-slicing">
+<b>Gemini API slices Office files, PDFs and media server-side.</b> <span class="rest">Upload once, then ask for pages, cell ranges, clips, layers or resolutions across turns; Google bills tokens only for the parts inspected.</span>
+</a>
+</div>
+<div class="scan-line t-craft">
+<span class="bullet"></span>
+<a href="#s-durable-agent-stacks">
+<b>Two CodeClimb builds separate durable agents from convenient agents.</b> <span class="rest">The same long-running coding agent favored Inngest on durability, DevEx, cost and SDK reach, and LangChain on observability and deployment; the article is Inngest-sponsored.</span>
 </a>
 </div>
 </div>
@@ -489,7 +522,141 @@ section.day[hidden] { display: none !important; }
 <h2>Tuesday</h2>
 <span>Nov 24</span>
 </div>
-
+<details class="card t-agents" data-tagcls="t-agents" data-title="Claude Ship can review, fix and approve PRs under repo policy" data-url="https://claude.com/resources/articles/introducing-claude-ship" id="s-claude-ship">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://claude.com/resources/articles/introducing-claude-ship" rel="noopener" target="_blank">Claude Ship can review, fix and approve PRs under repo policy</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Agents</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Anthropic launched Claude Ship in beta: Code Review checks PRs, PR Steward responds to failing CI, merge conflicts and review feedback, and Claude Approvals applies a policy file to decide what can merge. Developers can start with /ship in Claude Code; admins can enable one repository at a time, set review depth and spend limits, and run Approvals in observe-only mode. Anthropic says its own merged PRs more than doubled from June to September while the share reverted fell by more than 40%, an internal vendor metric.</p>
+<div class="why">
+<b>Why it matters:</b> This moves agents from writing code into the review and release path. The safe adoption shape is explicit: start in observe mode, keep branch protection and required checks, write an approval policy like a stricter CODEOWNERS file, and exclude security-sensitive paths from autonomous approval. Claude Ship is token-billed, and it is unavailable to organizations using Zero Data Retention, the HIPAA configuration or customer-managed encryption keys.</div>
+<div class="meta">
+<a class="srclink" href="https://claude.com/resources/articles/introducing-claude-ship" rel="noopener" target="_blank">Anthropic →</a>
+</div>
+</div>
+</details>
+<details class="card t-industry" data-tagcls="t-industry" data-title="OpenAI and Cisco open-source Shirudo for live Linux shields" data-url="https://openai.com/index/introducing-shirudo" id="s-openai-cisco-shirudo">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://openai.com/index/introducing-shirudo" rel="noopener" target="_blank">OpenAI and Cisco open-source Shirudo for live Linux shields</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Industry</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">OpenAI and Cisco released Shirudo, an open-source runtime for temporary eBPF protections while patches are prepared. Shields are cryptographically signed, checked by the Linux eBPF verifier, deployed without restarting the target, and recorded with TPM-backed verification. In a controlled Java4Shell test, a Codex-generated shield added a Base64 input check to a running Elasticsearch process and blocked the exploit while the service stayed up.</p>
+<div class="why">
+<b>Why it matters:</b> This targets the gap between knowing about a vulnerability and safely patching every host. The useful pattern is mitigation as a testable artifact: generate a narrow shield, monitor its effect on real traffic, require operator approval, then remove it after the permanent patch. It is early infrastructure, not a patch replacement; try the VM quickstart or a canary before letting any agent propose kernel-level controls.</div>
+<div class="meta">
+<a class="srclink" href="https://openai.com/index/introducing-shirudo" rel="noopener" target="_blank">OpenAI →</a>
+</div>
+</div>
+</details>
+<details class="card t-agents" data-tagcls="t-agents" data-title="John Snow Labs ships medical decision models for private deployment" data-url="https://www.johnsnowlabs.com/john-snow-labs-launches-first-commercially-available-decision-models-for-healthcare/" id="s-medical-decision-models">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://www.johnsnowlabs.com/john-snow-labs-launches-first-commercially-available-decision-models-for-healthcare/" rel="noopener" target="_blank">John Snow Labs ships medical decision models for private deployment</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Agents</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">John Snow Labs launched Medical DM Small and Nano, clinical-text decision models that return a fixed answer and probability instead of generated text. The vendor reports composite scores of 0.917 and 0.901 across nine clinical task areas, about 40ms and 24ms per note, and private deployment on premises or in AWS, Azure, Databricks and Snowflake. A separate PHI Guard model screens de-identified notes on CPU. The models are available to existing customers for private deployment.</p>
+<div class="why">
+<b>Why it matters:</b> This is the Jev pattern going vertical: small typed models for high-volume judgments inside a regulated data boundary. The cost and latency could make review-every-record workflows practical, but the comparison set, pricing and weights are not public, so treat the accuracy and GPU-cost figures as vendor claims. For healthcare or enterprise data, test calibration and abstention thresholds on your own notes before routing low-confidence cases.</div>
+<div class="meta">
+<a class="srclink" href="https://www.johnsnowlabs.com/john-snow-labs-launches-first-commercially-available-decision-models-for-healthcare/" rel="noopener" target="_blank">John Snow Labs →</a>
+</div>
+</div>
+</details>
+<details class="card t-agents" data-tagcls="t-agents" data-title="Gemini API slices Office files, PDFs and media server-side" data-url="https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/" id="s-gemini-file-slicing">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/" rel="noopener" target="_blank">Gemini API slices Office files, PDFs and media server-side</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Agents</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Google added native file slicing controls to the Gemini API across all Gemini 4 models, plus direct upload support for Office and OpenDocument files. A Files API URI can be reused across turns while the caller or agent requests a page range, sheet tab and cells, video interval, resolution, frame rate, or content layers such as text, formulas, transcript, frames and audio. Google says tokens are billed only for the portions the model inspects.</p>
+<div class="why">
+<b>Why it matters:</b> This removes a common agent-harness failure mode: running LibreOffice, PDF renderers and ffmpeg locally just to make a file small enough to inspect. The better pattern is skim cheaply with extracted text or low-resolution previews, then zoom into the exact page, sheet or frames at high resolution. Check file retention, residency and the actual token bill on your own workload, but this can materially simplify multimodal document agents.</div>
+<div class="meta">
+<a class="srclink" href="https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/" rel="noopener" target="_blank">Google →</a>
+</div>
+</div>
+</details>
+<details class="card t-craft" data-tagcls="t-craft" data-title="Two CodeClimb builds separate durable agents from convenient agents" data-url="https://www.decodingai.com/p/inngest-vs-langchain-durable-agent-stack" id="s-durable-agent-stacks">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://www.decodingai.com/p/inngest-vs-langchain-durable-agent-stack" rel="noopener" target="_blank">Two CodeClimb builds separate durable agents from convenient agents</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Craft</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Paul Iusztin built the same overnight coding agent, CodeClimb, on Inngest and on LangGraph plus LangSmith. Inngest&#x27;s separate state server could notice a dead worker, resume from the last experiment or evaluation, pause for a human without holding a worker, and clean up through a later event. LangChain&#x27;s Agent Server was easier to deploy and observe, but its one-second durability batching, in-process retries and whole-run sweeper meant a crash could lose recent work and leave sandboxes running unless the author added a watchdog.</p>
+<div class="why">
+<b>Why it matters:</b> If you use LangGraph in production, do not confuse checkpoints with full crash recovery. Wrap every side effect in a named step, keep step inputs and outputs small, make cleanup a queued task rather than a process-local hope, and test a worker kill mid-run before trusting an overnight agent. The comparison is hands-on and relevant, but Inngest sponsored it, so verify the durability and cost claims on your own workload.</div>
+<div class="meta">
+<a class="srclink" href="https://www.decodingai.com/p/inngest-vs-langchain-durable-agent-stack" rel="noopener" target="_blank">Decoding AI →</a>
+</div>
+</div>
+</details>
 </section>
 <section class="day" id="wed">
 <div class="day-head">
