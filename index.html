@@ -277,7 +277,7 @@ section.day[hidden] { display: none !important; }
 <div class="layout"><aside class="side"><div class="scan">
 <div class="scan-head">
 <h2>The 30-second version</h2>
-<span>10 stories, zero scrolling</span>
+<span>15 stories, zero scrolling</span>
 </div>
 <div class="scan-day">
 <div class="sd">Mon 23</div>
@@ -342,6 +342,39 @@ section.day[hidden] { display: none !important; }
 <span class="bullet"></span>
 <a href="#s-durable-agent-stacks">
 <b>Two CodeClimb builds separate durable agents from convenient agents.</b> <span class="rest">The same long-running coding agent favored Inngest on durability, DevEx, cost and SDK reach, and LangChain on observability and deployment; the article is Inngest-sponsored.</span>
+</a>
+</div>
+</div>
+<div class="scan-day">
+<div class="sd">Wed 25</div>
+<div class="scan-line t-research">
+<span class="bullet"></span>
+<a href="#s-gpt6-protein-design">
+<b>GPT-6 designs proteins with prompts and code.</b> <span class="rest">OpenAI reports lab evidence of binding across five targets, but specialized models still filtered candidates and full structure prediction remains weak.</span>
+</a>
+</div>
+<div class="scan-line t-agents">
+<span class="bullet"></span>
+<a href="#s-mcp-skills-tasks">
+<b>MCP servers can ship skills and run long tasks.</b> <span class="rest">Skills over MCP is public beta; Tasks and Elicitation are GA, so servers can hold expertise, run background work and ask for user approval mid-flow.</span>
+</a>
+</div>
+<div class="scan-line t-models">
+<span class="bullet"></span>
+<a href="#s-ernie-flash-preview">
+<b>Baidu opens ERNIE 5.5 Flash Preview weights.</b> <span class="rest">The 280B-total, 14B-active MoE has a 1M context, FP4 expert weights and day-one SGLang and vLLM paths, under Apache 2.0.</span>
+</a>
+</div>
+<div class="scan-line t-agents">
+<span class="bullet"></span>
+<a href="#s-langsmith-agent-lake">
+<b>LangChain turns LangSmith traces into an agent lake.</b> <span class="rest">SmithDB stores traces and outcomes, while online evals, decision models, AI Search, Engine and SmithTune mine them for agent improvement.</span>
+</a>
+</div>
+<div class="scan-line t-craft">
+<span class="bullet"></span>
+<a href="#s-kv-aware-load-balancing">
+<b>KV-aware routing beats least-busy load balancing.</b> <span class="rest">Route by reusable prefix blocks plus queue cost, keep stable prompt prefixes first, and benchmark TTFT rather than cache hits alone.</span>
 </a>
 </div>
 </div>
@@ -663,7 +696,141 @@ section.day[hidden] { display: none !important; }
 <h2>Wednesday</h2>
 <span>Nov 25</span>
 </div>
-
+<details class="card t-research" data-tagcls="t-research" data-title="GPT-6 designs proteins with prompts and code" data-url="https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/" id="s-gpt6-protein-design">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/" rel="noopener" target="_blank">GPT-6 designs proteins with prompts and code</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Research</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">OpenAI reports that GPT-6 models can design protein backbones and sequences from natural-language constraints plus code, without a specialized model generating the initial design. With partner Onava, 35 of 322 GPT-6.2-designed minibinders showed binding across five targets (10.9%), and 128 of 182 redesigned antibody loops retained binding. The strongest caveat is in OpenAI&#x27;s own limitations: specialized models supplied or filtered many sequences, so this is not yet end-to-end zero-shot protein design.</p>
+<div class="why">
+<b>Why it matters:</b> The important engineering shift is a general model becoming the interface to many scientific tasks: change the prompt, not the tool pipeline. Treat the results as early vendor evidence, not a replacement for RFdiffusion, ProteinMPNN or ESMFold. The reusable pattern is to pair general reasoning with deterministic code and specialist validators, then make the filtering step explicit in the workflow.</div>
+<div class="meta">
+<a class="srclink" href="https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/" rel="noopener" target="_blank">OpenAI →</a>
+</div>
+</div>
+</details>
+<details class="card t-agents" data-tagcls="t-agents" data-title="MCP servers can ship skills and run long tasks" data-url="https://claude.com/resources/articles/skills-over-mcp-tasks-and-more" id="s-mcp-skills-tasks">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://claude.com/resources/articles/skills-over-mcp-tasks-and-more" rel="noopener" target="_blank">MCP servers can ship skills and run long tasks</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Agents</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Anthropic expanded MCP in Claude: servers can publish Skills beside tools, run long jobs as Tasks, pause for structured user input with Elicitation, and soon receive files without putting them in context. Skills over MCP is in public beta for Claude and Claude Code; Tasks and Elicitation are generally available on paid individual plans and rolling out to Team and Enterprise. Anthropic also reports more than 700 million monthly MCP SDK downloads and 10,000 connectors, both vendor metrics.</p>
+<div class="why">
+<b>Why it matters:</b> This turns an MCP server from a list of calls into a versioned mini-agent interface: package the workflow, expose background execution, and ask before consequential actions. If you build tools for agents, ship the playbook with the tool and use Elicitation at money, deletion or permission boundaries instead of making the model guess. Check which client supports each extension before relying on it.</div>
+<div class="meta">
+<a class="srclink" href="https://claude.com/resources/articles/skills-over-mcp-tasks-and-more" rel="noopener" target="_blank">Anthropic →</a>
+</div>
+</div>
+</details>
+<details class="card t-models" data-tagcls="t-models" data-title="Baidu opens ERNIE 5.5 Flash Preview weights" data-url="https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview" id="s-ernie-flash-preview">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview" rel="noopener" target="_blank">Baidu opens ERNIE 5.5 Flash Preview weights</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Models</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Baidu released ERNIE 5.5 Flash Preview weights on Hugging Face under Apache 2.0. The model card describes a 280B-parameter MoE with 14B active per token, a 1M-token context, FP8 blockwise weights, MXFP4 routed experts, an FP8 KV cache and a DSpark speculative-decoding head. It is an intermediate post-training checkpoint, with BF16 and FP8 variants plus SGLang and vLLM deployment paths; Baidu&#x27;s benchmark table is self-evaluated.</p>
+<div class="why">
+<b>Why it matters:</b> The 14B active-parameter count is not the memory footprint: all 280B weights still have to be resident, so plan for a multi-GPU serving node even with FP4 experts. The useful parts to study are W4A8 quantization-aware training, compressed attention, sparse attention and a draft head trained with the model. Benchmark the preview checkpoint on your own agent harness before treating it as production-ready.</div>
+<div class="meta">
+<a class="srclink" href="https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview" rel="noopener" target="_blank">Hugging Face →</a>
+</div>
+</div>
+</details>
+<details class="card t-agents" data-tagcls="t-agents" data-title="LangChain turns LangSmith traces into an agent lake" data-url="https://www.langchain.com/blog/the-agent-lake" id="s-langsmith-agent-lake">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://www.langchain.com/blog/the-agent-lake" rel="noopener" target="_blank">LangChain turns LangSmith traces into an agent lake</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Agents</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">LangChain laid out its agent-lake architecture: LangSmith stores traces, threads and outcomes in SmithDB, then runs intelligent compute over them. Online evaluators and decision models classify production traces, AI Search adds natural-language trace queries, Insights groups failures, Engine proposes fixes as PRs, and SmithTune fine-tunes models from good trajectories. LangChain says Engine has analyzed more than 60 million production traces and its internal SmithTune example beat the base model on IssueBench; those are vendor-reported numbers.</p>
+<div class="why">
+<b>Why it matters:</b> This is directly relevant to production agents: traces are not just debugging logs, they are the training and evaluation corpus. Instrument outcome signals with the trace, use cheap typed classifiers for always-on filtering, and reserve LLM judges for ambiguous slices. Keep a path from detected failure to regression eval or fine-tuning data, otherwise the lake becomes storage without improvement.</div>
+<div class="meta">
+<a class="srclink" href="https://www.langchain.com/blog/the-agent-lake" rel="noopener" target="_blank">LangChain →</a>
+</div>
+</div>
+</details>
+<details class="card t-craft" data-tagcls="t-craft" data-title="KV-aware routing beats least-busy load balancing" data-url="https://blog.dailydoseofds.com/p/kv-cache-aware-load-balancing-clearly" id="s-kv-aware-load-balancing">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://blog.dailydoseofds.com/p/kv-cache-aware-load-balancing-clearly" rel="noopener" target="_blank">KV-aware routing beats least-busy load balancing</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Craft</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Daily Dose of DS explains why the least-loaded model replica is not always fastest for agent traffic: another replica may already hold most of the prompt&#x27;s KV cache. A KV-aware router scores both reusable prefix blocks and existing workload, tracks block hashes that include prior context, and avoids overloading the worker with the biggest cache match. The cited SGLang v0.4 shared-prefix benchmark raised cache hits from 20% to 75% and throughput from 82,665 to 158,596 tokens/s, about 1.9x.</p>
+<div class="why">
+<b>Why it matters:</b> For agents, stable instructions and tool definitions should sit before changing user or tool content so later calls can reuse prefill. If you serve replicas, compare least-connections, prefix-cache routing and cache-aware routing on the same traffic, and measure tail time-to-first-token as well as throughput. That 1.9x result came from a workload built around long shared prefixes, so do not assume it transfers to unrelated prompts.</div>
+<div class="meta">
+<a class="srclink" href="https://blog.dailydoseofds.com/p/kv-cache-aware-load-balancing-clearly" rel="noopener" target="_blank">Daily Dose of DS →</a>
+</div>
+</div>
+</details>
 </section>
 <section class="day" id="thu">
 <div class="day-head">
