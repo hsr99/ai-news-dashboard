@@ -277,7 +277,7 @@ section.day[hidden] { display: none !important; }
 <div class="layout"><aside class="side"><div class="scan">
 <div class="scan-head">
 <h2>The 30-second version</h2>
-<span>15 stories, zero scrolling</span>
+<span>20 stories, zero scrolling</span>
 </div>
 <div class="scan-day">
 <div class="sd">Mon 23</div>
@@ -375,6 +375,39 @@ section.day[hidden] { display: none !important; }
 <span class="bullet"></span>
 <a href="#s-kv-aware-load-balancing">
 <b>KV-aware routing beats least-busy load balancing.</b> <span class="rest">Route by reusable prefix blocks plus queue cost, keep stable prompt prefixes first, and benchmark TTFT rather than cache hits alone.</span>
+</a>
+</div>
+</div>
+<div class="scan-day">
+<div class="sd">Thu 26</div>
+<div class="scan-line t-research">
+<span class="bullet"></span>
+<a href="#s-antigravity-mass-spec-skills">
+<b>DeepMind gives Antigravity mass-spec chemistry skills.</b> <span class="rest">Gemini now calls trusted mass-spec tools and databases, matching frontier accuracy with a lightweight model on a 100-compound library benchmark.</span>
+</a>
+</div>
+<div class="scan-line t-models">
+<span class="bullet"></span>
+<a href="#s-bonsai-25-27b">
+<b>PrismML packs a 27B agent model into 5.9GB.</b> <span class="rest">Ternary Bonsai 2.5 keeps Qwen3.8-27B tool calling near FP16 while fitting in 5.93GB, with Apache 2.0 GGUF and MLX packs.</span>
+</a>
+</div>
+<div class="scan-line t-craft">
+<span class="bullet"></span>
+<a href="#s-anthropic-rust-api-verification">
+<b>Anthropic shadow-tested its Rust API against production.</b> <span class="rest">After tests showed 98% pass but only 25% production parity, Anthropic replayed one model output, fingerprinted diffs and let agents fix them.</span>
+</a>
+</div>
+<div class="scan-line t-agents">
+<span class="bullet"></span>
+<a href="#s-docker-agent-sandboxes">
+<b>Docker Sandboxes give coding agents their own daemon.</b> <span class="rest">A microVM with a private Docker daemon lets an agent build containers without the host socket that can expose unrelated files.</span>
+</a>
+</div>
+<div class="scan-line t-inference">
+<span class="bullet"></span>
+<a href="#s-magnitude-expert-streaming">
+<b>Magnitude streams MoE experts from SSD to RAM.</b> <span class="rest">The Apache 2.0 local inference engine tiers GPU, RAM and NVMe, prefetching sparse experts instead of requiring every weight in VRAM.</span>
 </a>
 </div>
 </div>
@@ -837,7 +870,143 @@ section.day[hidden] { display: none !important; }
 <h2>Thursday</h2>
 <span>Nov 26</span>
 </div>
-
+<details class="card t-research" data-tagcls="t-research" data-title="DeepMind gives Antigravity mass-spec chemistry skills" data-url="https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/" id="s-antigravity-mass-spec-skills">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/" rel="noopener" target="_blank">DeepMind gives Antigravity mass-spec chemistry skills</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Research</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Google DeepMind released Mass Spec Skills for Google Antigravity. The agent chains tools such as matchms, SIRIUS, MAGMa, MetFrag, PubChem and RDKit, then lays out the chemical evidence for review. On 100 catalogued compounds, Gemini models scored under 4% without internet or skills and around 97% with the skills; lightweight Gemini 3.8 Flash matched the frontier models. The skills are available today, but the result is library identification: mirror-image molecules, some isomers and genuinely new molecules still need more evidence.</p>
+<div class="why">
+<b>Why it matters:</b> This is the useful agent pattern: keep precise science in deterministic tools, use the model to select and chain them, and return an auditable report instead of a naked answer. It also shows why tested domain skills can beat a larger model improvising API calls. For your own agents, evaluate the tool-wrapped path separately from model-only and internet-only baselines.</div>
+<div class="meta">
+<a class="srclink" href="https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/" rel="noopener" target="_blank">Google DeepMind →</a>
+</div>
+</div>
+</details>
+<details class="card t-models" data-tagcls="t-models" data-title="PrismML packs a 27B agent model into 5.9GB" data-url="https://huggingface.co/prism-ml/Ternary-Bonsai-2.5-27B-gguf" id="s-bonsai-25-27b">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://huggingface.co/prism-ml/Ternary-Bonsai-2.5-27B-gguf" rel="noopener" target="_blank">PrismML packs a 27B agent model into 5.9GB</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Models</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">PrismML released Ternary Bonsai 2.5 27B, a Qwen3.8-27B derivative whose language weights are ternary at 1.76 bits per weight. The model card reports a 5.93GB GGUF, 262K context, optional vision and native tool calling. PrismML&#x27;s own benchmark table puts agentic tool calling at 77.2 versus 77.7 for the FP16 base and agentic coding at 54.2 versus 60.5, about 90% of full precision; the numbers are vendor-reported. Weights are Apache 2.0, with GGUF and MLX variants.</p>
+<div class="why">
+<b>Why it matters:</b> This is aimed at private, local agents rather than chat demos. If you try it, note the runtime traps: Q2_0 needs llama.cpp b11556 or newer, the tighter packs need PrismML&#x27;s fork, pass --min-p 0, and xhigh reasoning is the default. MTP draft heads speed decode on NVIDIA but slow prompt processing, so benchmark both on your workload.</div>
+<div class="meta">
+<a class="srclink" href="https://huggingface.co/prism-ml/Ternary-Bonsai-2.5-27B-gguf" rel="noopener" target="_blank">Hugging Face →</a>
+<a class="srclink" href="https://prismml.com/news/bonsai-2-5-27b" rel="noopener" target="_blank">PrismML →</a>
+</div>
+</div>
+</details>
+<details class="card t-craft" data-tagcls="t-craft" data-title="Anthropic shadow-tested its Rust API against production" data-url="https://www.anthropic.com/research/migrating-api-to-rust" id="s-anthropic-rust-api-verification">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://www.anthropic.com/research/migrating-api-to-rust" rel="noopener" target="_blank">Anthropic shadow-tested its Rust API against production</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">From production</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Anthropic migrated the Messages API from Python to Rust while traffic was up roughly 1,800x since early 2024. The new API uses about 70% less CPU per request and cuts median time to first token by about 20%. The interesting part is verification: ported tests passed about 98% while only a quarter of inputs initially matched production, so Anthropic ran the model once, replayed that output to Rust, checkpointed every processing stage, and grouped privacy-safe diff fingerprints for agent repair loops.</p>
+<div class="why">
+<b>Why it matters:</b> Generation was not the bottleneck; trust was. The transferable pattern is to make the old production system an oracle, keep requests billable only once, and record where a diff happened without reading customer text. Human review still gates fixes because a verifier can reward a shortcut that matches output without solving the real problem.</div>
+<div class="meta">
+<a class="srclink" href="https://www.anthropic.com/research/migrating-api-to-rust" rel="noopener" target="_blank">Anthropic →</a>
+</div>
+</div>
+</details>
+<details class="card t-agents" data-tagcls="t-agents" data-title="Docker Sandboxes give coding agents their own daemon" data-url="https://thenuancedperspective.substack.com/p/running-ai-agents-safely-with-docker" id="s-docker-agent-sandboxes">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://thenuancedperspective.substack.com/p/running-ai-agents-safely-with-docker" rel="noopener" target="_blank">Docker Sandboxes give coding agents their own daemon</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Craft</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">A new Docker Sandboxes walkthrough explains the practical isolation levels for coding agents: host permissions, containers, then a microVM. The key demo shows why mounting the host Docker socket is dangerous: a container can ask the host daemon to start another container with sensitive folders mounted. Docker Sandboxes instead give the agent a private daemon, controlled mounts, network policies, CPU and memory limits, and authentication outside the sandbox.</p>
+<div class="why">
+<b>Why it matters:</b> Before giving Claude Code, Codex or another agent more freedom, define exactly which folders are writable, which are read-only, which network destinations are allowed and which ports get exposed. Read-only still means the agent can read the file, so do not mount secrets at all. Never give an agent container the host Docker socket unless you accept host-level risk.</div>
+<div class="meta">
+<a class="srclink" href="https://thenuancedperspective.substack.com/p/running-ai-agents-safely-with-docker" rel="noopener" target="_blank">The Nuanced Perspective →</a>
+<a class="srclink" href="https://github.com/RamiKrispin/docker-sandboxes/" rel="noopener" target="_blank">Demos →</a>
+</div>
+</div>
+</details>
+<details class="card t-inference" data-tagcls="t-inference" data-title="Magnitude streams MoE experts from SSD to RAM" data-url="https://github.com/magnitudedev/magnitude" id="s-magnitude-expert-streaming">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://github.com/magnitudedev/magnitude" rel="noopener" target="_blank">Magnitude streams MoE experts from SSD to RAM</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">From production</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Magnitude is an open-source local inference engine for sparse MoE models. It keeps shared layers and the most reused experts in GPU or unified memory, moves the next tier to RAM, and streams colder experts from NVMe SSD with prediction and prefetch. The project supports Apple Silicon, NVIDIA, AMD, Intel and CPU-only machines, exposes an OpenAI-compatible API and connects to coding agents. It is Apache 2.0 and says streaming weights is read-only, so it does not add flash wear.</p>
+<div class="why">
+<b>Why it matters:</b> This changes the local-serving question from “does the whole model fit in VRAM?” to “how well does the engine predict and cache experts?” Do not confuse active parameters with memory footprint: the full model still has to live somewhere, and VRAM must fit the active expert path. Benchmark TTFT, steady-state tokens/s, concurrency and NVMe speed before trusting demo numbers.</div>
+<div class="meta">
+<a class="srclink" href="https://github.com/magnitudedev/magnitude" rel="noopener" target="_blank">GitHub →</a>
+</div>
+</div>
+</details>
 </section>
 <section class="day" id="fri">
 <div class="day-head">
