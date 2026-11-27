@@ -277,7 +277,7 @@ section.day[hidden] { display: none !important; }
 <div class="layout"><aside class="side"><div class="scan">
 <div class="scan-head">
 <h2>The 30-second version</h2>
-<span>20 stories, zero scrolling</span>
+<span>25 stories, zero scrolling</span>
 </div>
 <div class="scan-day">
 <div class="sd">Mon 23</div>
@@ -411,9 +411,41 @@ section.day[hidden] { display: none !important; }
 </a>
 </div>
 </div>
-</div></aside>
+<div class="scan-day">
+<div class="sd">Fri 27</div>
+<div class="scan-line t-agents">
+<span class="bullet"></span>
+<a href="#s-microsoft-decision-11-ga">
+<b>Microsoft opens Decision-1.1 for typed app routing.</b> <span class="rest">GA in Foundry and through OpenRouter and Vercel, it returns noul, choice and score probabilities for classification, routing, grading and gates.</span>
+</a>
+</div>
+<div class="scan-line t-agents">
+<span class="bullet"></span>
+<a href="#s-spring-ai-decision-model-api">
+<b>Spring AI gives decision models a typed API.</b> <span class="rest">Spring AI 2.1 supports Ollama, OpenAI Decisions and System One providers such as Jev and Laya, with one-call probabilities and thresholds.</span>
+</a>
+</div>
+<div class="scan-line t-agents">
+<span class="bullet"></span>
+<a href="#s-antigravity-orchestrator-handoff">
+<b>Antigravity Orchestrator splits planning from execution.</b> <span class="rest">Gemini 4 Carbon or Neon plans while Hydrogen edits and tests, handing back on friction; Google claims 24% less quota and 19% faster runs.</span>
+</a>
+</div>
+<div class="scan-line t-inference">
+<span class="bullet"></span>
+<a href="#s-lmcache-disaggregated-kv">
+<b>LMCache moves KV cache work out of the engine.</b> <span class="rest">The Apache 2.0 layer tiers KV across GPU, CPU, disk and remote stores, reusing prefixes across serving engines and surviving cache-process failures.</span>
+</a>
+</div>
+<div class="scan-line t-inference">
+<span class="bullet"></span>
+<a href="#s-llamacpp-1-release">
+<b>llama.cpp reaches 1.0 with a server hardening pass.</b> <span class="rest">The release cleans the API, adds FP8 KV caches and a MoE host-memory cache, and ships a redesigned web UI with TTS.</span>
+</a>
+</div>
+</div></div></aside>
 <main class="main"><div class="pick">
-<div class="pick-inner" data-tagcls="t-agents" data-title="RudderStack&#x27;s Jev shadow test lost to its one-loop agent" data-url="https://www.rudderstack.com/blog/faster-decision-model-made-our-agent-slower/">
+<div class="pick-inner" data-tagcls="t-agents" data-title="Microsoft opens Decision-1.1 for typed app routing" data-url="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-1-build-faster-more-efficient-ai-applications-w/4573877">
 <button aria-label="Save for later" class="bm bm-pick" title="Save for later" type="button">
 <svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
 <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
@@ -421,14 +453,15 @@ section.day[hidden] { display: none !important; }
 </button>
 <span class="pick-label">Pick of the week</span>
 <h3>
-<a href="https://www.rudderstack.com/blog/faster-decision-model-made-our-agent-slower/" rel="noopener" target="_blank">RudderStack&#x27;s Jev shadow test lost to its one-loop agent</a>
+<a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-1-build-faster-more-efficient-ai-applications-w/4573877" rel="noopener" target="_blank">Microsoft opens Decision-1.1 for typed app routing</a>
 </h3>
-<p class="takeaway">RudderStack ran a month-long shadow experiment across about 9,600 comparable real decisions. Jev answered for about $0.00015 in under 0.1 seconds, but the evidence-gathering LLM around it made the full pipeline 7% costlier and 60% slower than the existing one-loop agent.</p>
-<p class="takeaway">The practical rule: put a typed decision model where the evidence is already in the prompt, such as a final reviewer or routing check. Do not split gather and decide just to make the final choice cheap. RudderStack has not yet shown that a tuned Jev chooses as well as its production agent.</p>
+<p class="takeaway">Microsoft-Decision-1.1 is now GA in Foundry and available through OpenRouter and Vercel. It is built for bounded choices rather than prose: noul for yes/no, choice for routing, and score for ordered judgments, with probabilities your app can threshold.</p>
+<p class="takeaway">Microsoft reports 78.8% average accuracy across 102 held-out benchmarks, a Gemma 4 26B A4 base, multimodal input, and $0.042 per million input tokens on Global Standard with output tokens included. Treat those as vendor numbers and test the model on your own decisions.</p>
 <div class="meta">
 <span class="tag t-agents">Agents</span>
-<span class="tag t-agents">Web</span>
-<a class="srclink" href="https://www.rudderstack.com/blog/faster-decision-model-made-our-agent-slower/" rel="noopener" target="_blank">RudderStack →</a>
+<span class="tag t-agents">OpenRouter</span>
+<a class="srclink" href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-1-build-faster-more-efficient-ai-applications-w/4573877" rel="noopener" target="_blank">Microsoft →</a>
+<a class="srclink" href="https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision" rel="noopener" target="_blank">Docs →</a>
 </div>
 </div>
 </div>
@@ -1013,7 +1046,146 @@ section.day[hidden] { display: none !important; }
 <h2>Friday</h2>
 <span>Nov 27</span>
 </div>
-
+<details class="card t-agents" data-tagcls="t-agents" data-title="Microsoft opens Decision-1.1 for typed app routing" data-url="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-1-build-faster-more-efficient-ai-applications-w/4573877" id="s-microsoft-decision-11-ga">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-1-build-faster-more-efficient-ai-applications-w/4573877" rel="noopener" target="_blank">Microsoft opens Decision-1.1 for typed app routing</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Agents</span>
+<span class="tag">OpenRouter</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Microsoft made Microsoft-Decision-1.1 generally available on November 17 in Foundry, OpenRouter and Vercel. It accepts text, JSON or images plus typed questions, then returns a yes probability, one selected option, or an ordered score rather than generated prose. Microsoft says it is based on Gemma 4 26B A4, reports 78.8% average accuracy across 102 held-out benchmarks, and prices Global Standard input at $0.042 per million tokens with output tokens included; those are vendor claims.</p>
+<div class="why">
+<b>Why it matters:</b> This is the hyperscaler entry into the Jev and Laya decision-model lane, and OpenRouter makes it easy to test. Use it for routing, gates, grading, tool selection and escalation when the evidence is already in the prompt. Do not treat the probabilities as calibrated truth: choose thresholds on your own labeled examples and send uncertain cases to a person or a stronger model.</div>
+<div class="meta">
+<a class="srclink" href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-1-build-faster-more-efficient-ai-applications-w/4573877" rel="noopener" target="_blank">Microsoft →</a>
+<a class="srclink" href="https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision" rel="noopener" target="_blank">Docs →</a>
+</div>
+</div>
+</details>
+<details class="card t-agents" data-tagcls="t-agents" data-title="Spring AI gives decision models a typed API" data-url="https://spring.io/blog/2026/11/26/spring-ai-decision-models-guardrails-judges/" id="s-spring-ai-decision-model-api">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://spring.io/blog/2026/11/26/spring-ai-decision-models-guardrails-judges/" rel="noopener" target="_blank">Spring AI gives decision models a typed API</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Craft</span>
+<span class="tag">Jev</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Spring AI 2.1 adds a DecisionModel API with three question types: YesNo, Choice and Score. One call can ask several questions about the same input and returns typed answers plus probabilities. Providers include Ollama&#x27;s local d1-omni:600m, OpenAI Decisions, and any System One server such as TypeSafe Jev, Laya, llmman or Ollama. In Spring&#x27;s live demo, the local model answered three questions in a median 29ms, while hosted Jev took about 150ms including network time.</p>
+<div class="why">
+<b>Why it matters:</b> This turns decision models from a custom side API into ordinary application control flow. The examples cover a guardrail advisor and a typed DecisionJudge, and the important design point is the threshold: automate only very confident decisions, route the middle band to review, and never assume probabilities transfer across models or differently worded questions.</div>
+<div class="meta">
+<a class="srclink" href="https://spring.io/blog/2026/11/26/spring-ai-decision-models-guardrails-judges/" rel="noopener" target="_blank">Spring →</a>
+<a class="srclink" href="https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0" rel="noopener" target="_blank">Release →</a>
+</div>
+</div>
+</details>
+<details class="card t-agents" data-tagcls="t-agents" data-title="Antigravity Orchestrator splits planning from execution" data-url="https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/" id="s-antigravity-orchestrator-handoff">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/" rel="noopener" target="_blank">Antigravity Orchestrator splits planning from execution</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Agents</span>
+<span class="tag">Nov 12</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Google&#x27;s Antigravity Orchestrator pairs a frontier planner with Gemini 4 Hydrogen as the executor inside one coding session. Carbon, or Neon after the November 18 update, explores and repairs the plan; Hydrogen edits code, updates packages and runs tests, handing control back when it hits friction. Google says the Carbon-Hydrogen pair reached near-Carbon task success on Terminal-Bench 4.1 while using 24% less quota and finishing 19% faster. Those are vendor-reported averages.</p>
+<div class="why">
+<b>Why it matters:</b> A static model router guesses the whole task from the first prompt. Orchestrator instead treats difficulty as stage-specific, which is the same practical pattern behind decision-model routing: spend frontier tokens on planning and recovery, use a cheaper executor for routine steps, and make the handoff explicit. Validate the repair loop and quota savings on your own repositories before adopting it.</div>
+<div class="meta">
+<a class="srclink" href="https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/" rel="noopener" target="_blank">Hydrogen →</a>
+<a class="srclink" href="https://antigravity.google/blog/gemini-4-neon-in-google-antigravity/" rel="noopener" target="_blank">Neon →</a>
+</div>
+</div>
+</details>
+<details class="card t-inference" data-tagcls="t-inference" data-title="LMCache moves KV cache work out of the engine" data-url="https://github.com/lmcache/lmcache" id="s-lmcache-disaggregated-kv">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://github.com/lmcache/lmcache" rel="noopener" target="_blank">LMCache moves KV cache work out of the engine</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Inference</span>
+<span class="tag">Apache 2.0</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Today&#x27;s Daily Dose deep dive revisits LMCache, an Apache 2.0 KV-cache management layer for production inference. LMCache runs cache movement outside the serving engine and tiers reusable KV state across GPU memory, CPU RAM, local SSD and remote backends such as Redis, Valkey, S3-compatible storage, NIXL and GDS. It is vendor-neutral, integrates with mainstream serving engines, and exposes Kubernetes and cache-level observability. The newsletter reports up to 14x faster TTFT in an H200 Qwen3-235B test; that number was not independently verified here.</p>
+<div class="why">
+<b>Why it matters:</b> Exact prefix caching breaks when document order changes or two cached documents are combined. LMCache&#x27;s useful idea is architectural: move cache I/O off the inference critical path, share reusable state across engines, and degrade to ordinary inference if the cache process fails. Measure TTFT, hit rate, tail latency and recovery on your own prompts rather than trusting the headline speedup.</div>
+<div class="meta">
+<a class="srclink" href="https://github.com/lmcache/lmcache" rel="noopener" target="_blank">GitHub →</a>
+<a class="srclink" href="https://lmcache.ai/blog" rel="noopener" target="_blank">Blog →</a>
+</div>
+</div>
+</details>
+<details class="card t-inference" data-tagcls="t-inference" data-title="llama.cpp reaches 1.0 with a server hardening pass" data-url="https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0" id="s-llamacpp-1-release">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0" rel="noopener" target="_blank">llama.cpp reaches 1.0 with a server hardening pass</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Open</span>
+<span class="tag">Nov 13</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">llama.cpp v1.0.0 removes the deprecated public API, promotes the NextN speculative API, adds OCP FP8 KV caches, and introduces a host-memory MoE expert cache with a configurable CPU share. It also adds new text, vision and TTS architectures, an OpenAI-compatible speech endpoint, a redesigned web UI, and ggml 1.0. The server gets practical hardening for SSRF, CORS, DNS rebinding and MCP tool cancellation.</p>
+<div class="why">
+<b>Why it matters:</b> This is a stability milestone for the local-model stack that tools such as Bonsai and many coding agents build on. The MoE cache is not a memory shortcut: the full model still has to live somewhere, so test how much stays in GPU, RAM and CPU before sizing a machine. Review the removed API calls and new server opt-ins before upgrading an exposed agent.</div>
+<div class="meta">
+<a class="srclink" href="https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0" rel="noopener" target="_blank">Release →</a>
+<a class="srclink" href="https://huggingface.co/blog/ggml-org/llama-cpp-v1" rel="noopener" target="_blank">Blog →</a>
+</div>
+</div>
+</details>
 </section>
 <section class="day" id="sat">
 <div class="day-head">
