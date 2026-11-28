@@ -277,7 +277,7 @@ section.day[hidden] { display: none !important; }
 <div class="layout"><aside class="side"><div class="scan">
 <div class="scan-head">
 <h2>The 30-second version</h2>
-<span>25 stories, zero scrolling</span>
+<span>30 stories, zero scrolling</span>
 </div>
 <div class="scan-day">
 <div class="sd">Mon 23</div>
@@ -443,9 +443,41 @@ section.day[hidden] { display: none !important; }
 <b>llama.cpp reaches 1.0 with a server hardening pass.</b> <span class="rest">The release cleans the API, adds FP8 KV caches and a MoE host-memory cache, and ships a redesigned web UI with TTS.</span>
 </a>
 </div>
+<div class="scan-day">
+<div class="sd">Sat 28</div>
+<div class="scan-line t-agents">
+<span class="bullet"></span>
+<a href="#s-aws-strands-decider-v2">
+<b>AWS open-sources five calibrated Decider v2 models.</b> <span class="rest">The Apache 2.0 Gemma 4 family reads shared context bidirectionally and returns option probabilities for agent routing, gating and evaluation.</span>
+</a>
+</div>
+<div class="scan-line t-craft">
+<span class="bullet"></span>
+<a href="#s-langwatch-scenario-agent-tests">
+<b>Scenario tests agents by simulating users and judges.</b> <span class="rest">The framework-agnostic library plugs into pytest with one call() adapter, so prompt and tool changes get conversation-level regression tests.</span>
+</a>
+</div>
+<div class="scan-line t-tools">
+<span class="bullet"></span>
+<a href="#s-nemotron-parse-open-data">
+<b>NVIDIA opens 18.88M document-training examples.</b> <span class="rest">Nemotron 3.5 Parse adds chart, table and OCR datasets, an SFT-to-RLVR recipe, and DFlash2 decoding for faster structured extraction.</span>
+</a>
+</div>
+<div class="scan-line t-open">
+<span class="bullet"></span>
+<a href="#s-gigachat-4-open-moe">
+<b>GigaChat 4 releases a 708B MIT-licensed MoE.</b> <span class="rest">The 41B-active model combines hybrid attention, a 1M-token context and instant/reasoning modes; vendor tables still trail some rivals.</span>
+</a>
+</div>
+<div class="scan-line t-safety">
+<span class="bullet"></span>
+<a href="#s-1password-github-cicd-incident">
+<b>1Password traces a backend breach to a GitHub account.</b> <span class="rest">Vaults stayed encrypted, but the attacker reached source, backend services and CI/CD credentials, a warning for agent-connected development pipelines.</span>
+</a>
+</div>
 </div></div></aside>
 <main class="main"><div class="pick">
-<div class="pick-inner" data-tagcls="t-agents" data-title="Microsoft opens Decision-1.1 for typed app routing" data-url="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-1-build-faster-more-efficient-ai-applications-w/4573877">
+<div class="pick-inner" data-tagcls="t-agents" data-title="AWS open-sources five calibrated Decider v2 models" data-url="https://strandsagents.com/blog/introducing-strands-decider-v2/">
 <button aria-label="Save for later" class="bm bm-pick" title="Save for later" type="button">
 <svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
 <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
@@ -453,15 +485,14 @@ section.day[hidden] { display: none !important; }
 </button>
 <span class="pick-label">Pick of the week</span>
 <h3>
-<a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-1-build-faster-more-efficient-ai-applications-w/4573877" rel="noopener" target="_blank">Microsoft opens Decision-1.1 for typed app routing</a>
+<a href="https://strandsagents.com/blog/introducing-strands-decider-v2/" rel="noopener" target="_blank">AWS open-sources five calibrated Decider v2 models</a>
 </h3>
-<p class="takeaway">Microsoft-Decision-1.1 is now GA in Foundry and available through OpenRouter and Vercel. It is built for bounded choices rather than prose: noul for yes/no, choice for routing, and score for ordered judgments, with probabilities your app can threshold.</p>
-<p class="takeaway">Microsoft reports 78.8% average accuracy across 102 held-out benchmarks, a Gemma 4 26B A4 base, multimodal input, and $0.042 per million input tokens on Global Standard with output tokens included. Treat those as vendor numbers and test the model on your own decisions.</p>
+<p class="takeaway">Strands Decider v2 is a family of Apache 2.0 system-one models from E2B to 31B. They do not generate prose: they read the state and return a probability for each allowed decision in one forward pass, ready for routing, tool gates and evaluation.</p>
+<p class="takeaway">The useful advance is calibration plus open weights. AWS reports 82.1 average on six text benchmarks for the 31B model, expected calibration error down to 0.027, and a Haiku/Sonnet router reaching 94% of Sonnet task success at 44% of the cost. Treat those as vendor results and calibrate thresholds on your own traces.</p>
 <div class="meta">
 <span class="tag t-agents">Agents</span>
-<span class="tag t-agents">OpenRouter</span>
-<a class="srclink" href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-1-build-faster-more-efficient-ai-applications-w/4573877" rel="noopener" target="_blank">Microsoft →</a>
-<a class="srclink" href="https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision" rel="noopener" target="_blank">Docs →</a>
+<span class="tag t-agents">Apache 2.0</span>
+<a class="srclink" href="https://strandsagents.com/blog/introducing-strands-decider-v2/" rel="noopener" target="_blank">Strands →</a>
 </div>
 </div>
 </div>
@@ -1192,7 +1223,142 @@ section.day[hidden] { display: none !important; }
 <h2>Saturday</h2>
 <span>Nov 28</span>
 </div>
-
+<details class="card t-agents" data-tagcls="t-agents" data-title="AWS open-sources five calibrated Decider v2 models" data-url="https://strandsagents.com/blog/introducing-strands-decider-v2/" id="s-aws-strands-decider-v2">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://strandsagents.com/blog/introducing-strands-decider-v2/" rel="noopener" target="_blank">AWS open-sources five calibrated Decider v2 models</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Decision</span>
+<span class="tag">Apache 2.0</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">The AWS Strands team released five Decider v2 models, from Gemma 4 E2B to 31B, with Apache 2.0 weights and an open-source serving repo. A Decider reads a state, question and fixed options, then returns option probabilities in one forward pass. v2 replaces the pointer head with direct option-token scoring, uses prefix-bidirectional attention over the shared state, trains on 17.48M decision examples, and ships calibration temperatures. AWS reports 82.1 average on six text benchmarks for the 31B model and expected calibration error of 0.027, down from 0.062.</p>
+<div class="why">
+<b>Why it matters:</b> This is directly in the Jev, Laya and Microsoft Decision lane, but with open weights and local serving. Use it for high-volume routing, tool gates, groundedness checks and escalation. AWS says a Decider router reached 94% of Sonnet task success at 44% of the cost; treat that as workload-specific, then measure accuracy, ECE, p95 latency and cost on your own agent traces.</div>
+<div class="meta">
+<a class="srclink" href="https://strandsagents.com/blog/introducing-strands-decider-v2/" rel="noopener" target="_blank">Strands →</a>
+</div>
+</div>
+</details>
+<details class="card t-craft" data-tagcls="t-craft" data-title="Scenario tests agents by simulating users and judges" data-url="https://scenario.langwatch.ai/" id="s-langwatch-scenario-agent-tests">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://scenario.langwatch.ai/" rel="noopener" target="_blank">Scenario tests agents by simulating users and judges</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Craft</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Today&#x27;s Daily Dose walkthrough uses LangWatch Scenario to test a CrewAI travel planner. The pipeline has three roles: the agent under test, a user simulator, and a judge. Scenario runs the simulated conversation inside pytest and evaluates it against natural-language criteria; in the demo, the judge failed the run because the planner did not ask for a missing location. Scenario itself is framework-agnostic, works with Python, TypeScript and Go, and requires only a call() adapter for your agent.</p>
+<div class="why">
+<b>Why it matters:</b> Unit tests prove tools run, and single-output evals score one component, but neither catches a multi-turn agent that forgets to clarify, loops, or uses the wrong tool sequence. Add scenario tests before changing prompts or tools, combine LLM judgment with deterministic checks where possible, and keep the judge criteria versioned beside the test.</div>
+<div class="meta">
+<a class="srclink" href="https://scenario.langwatch.ai/" rel="noopener" target="_blank">Scenario docs →</a>
+</div>
+</div>
+</details>
+<details class="card t-tools" data-tagcls="t-tools" data-title="NVIDIA opens 18.88M document-training examples" data-url="https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin" id="s-nemotron-parse-open-data">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin" rel="noopener" target="_blank">NVIDIA opens 18.88M document-training examples</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">RAG</span>
+<span class="tag">Web</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">NVIDIA released three Nemotron 3.5 Parse training datasets: 9.98M synthetic charts, 1M tables and 7.9M multilingual OCR pages, with images, annotations and generation notes. The companion recipe covers supervised fine-tuning followed by GRPO with verifiable rewards, plus a DFlash2 speculator. NVIDIA reports development score gains from 66.24 to 71.38, loop-flagged pages down from 126 to 29, and 7.62x faster concurrency-one parsing on one H200; those are vendor measurements.</p>
+<div class="why">
+<b>Why it matters:</b> Many RAG failures start before retrieval: tables lose structure, chart values are guessed, and headings disappear. This release gives you data and a recipe to specialize a parser for your own document shapes. Evaluate structural accuracy, numeric extraction, pages per second and downstream answer quality on representative PDFs before replacing your current OCR or parser.</div>
+<div class="meta">
+<a class="srclink" href="https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin" rel="noopener" target="_blank">NVIDIA on HF →</a>
+</div>
+</div>
+</details>
+<details class="card t-open" data-tagcls="t-open" data-title="GigaChat 4 releases a 708B MIT-licensed MoE" data-url="https://huggingface.co/ai-sage/GigaChat4-708B-A41B" id="s-gigachat-4-open-moe">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://huggingface.co/ai-sage/GigaChat4-708B-A41B" rel="noopener" target="_blank">GigaChat 4 releases a 708B MIT-licensed MoE</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Open</span>
+<span class="tag">MIT</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">Sber&#x27;s ai-sage team released GigaChat 4 708B-A41B under the MIT license, with FP8, BF16 and GGUF variants plus base checkpoints. The model combines 48 Gated DeltaNet layers with 16 sparse-attention MLA layers, supports a one-million-token context, and puts Instant and Reasoning modes in one instruction-tuned checkpoint. The technical report claims 71.26% on Terminal-Bench 2.0 in Reasoning mode, but its own table trails Mistral 4 Large, GLM-5.3 and DeepSeek 4.1 on Terminal-Bench 2.1 and DeepSWE.</p>
+<div class="why">
+<b>Why it matters:</b> This is a serious open-weight long-context release, not an automatic coding-model upgrade. Remember that 41B active parameters are compute per token, not memory footprint: all 708B weights still have to be stored and served. If you evaluate it, test long-document retrieval, tool use, reasoning latency, FP8 quality and the serving cost of the full checkpoint.</div>
+<div class="meta">
+<a class="srclink" href="https://huggingface.co/ai-sage/GigaChat4-708B-A41B" rel="noopener" target="_blank">Model card →</a>
+<a class="srclink" href="https://giga.chat/blog/en/posts/gigachat-4-tech-report" rel="noopener" target="_blank">Tech report →</a>
+</div>
+</div>
+</details>
+<details class="card t-safety" data-tagcls="t-safety" data-title="1Password traces a backend breach to a GitHub account" data-url="https://1password.com/blog/update-on-nov-2026-security-incident" id="s-1password-github-cicd-incident">
+<summary>
+<span class="chev">›</span>
+<div class="sum-main">
+<h3>
+<a href="https://1password.com/blog/update-on-nov-2026-security-incident" rel="noopener" target="_blank">1Password traces a backend breach to a GitHub account</a>
+</h3>
+<div class="meta in-summary">
+<span class="tag">Security</span>
+<span class="tag">From production</span>
+</div>
+</div>
+<button aria-label="Save for later" class="bm" title="Save for later" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17">
+<path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"></path>
+</svg>
+</button>
+</summary>
+<div class="card-body">
+<p class="takeaway">1Password says an attacker used an employee&#x27;s corporate GitHub account to read private source code, push malicious code into backend services, and copy account records for a subset of customers. Vault contents, account passwords and Secret Keys were not affected. The exposed records included names, sign-in emails, account metadata, and tokens in certain invitation or recovery links; the attacker also reached CI/CD systems containing infrastructure credentials. 1Password revoked access, rotated credentials, rebuilt affected services and lengthened recovery codes.</p>
+<div class="why">
+<b>Why it matters:</b> Agent-connected development pipelines make GitHub identity, CI permissions and deployment credentials part of the production attack surface. Audit who and what can push code, require deployment approvals, prefer short-lived scoped credentials, separate agent identities from human ones, and make sure repository access alone cannot silently change production.</div>
+<div class="meta">
+<a class="srclink" href="https://1password.com/blog/update-on-nov-2026-security-incident" rel="noopener" target="_blank">1Password →</a>
+</div>
+</div>
+</details>
 </section>
 <section class="day" id="sun">
 <div class="day-head">
